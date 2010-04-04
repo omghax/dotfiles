@@ -2,7 +2,26 @@
 	name = <%= print("Your Name: "); STDOUT.flush; STDIN.gets.chomp %>
 	email = <%= print("Your Email: "); STDOUT.flush; STDIN.gets.chomp %>
 [alias]
+	br = branch
+	brm = branch --merged
+	ci = commit
 	co = checkout
+	d = diff
+	dc = diff --cached
+	fe = fetch
+	ff = merge --ff-only
+	pick = cherry-pick
+	rb = rebase
+	rba = rebase --abort
+	rbc = rebase --continue
+	rbi = rebase --interactive
+	rbs = rebase --skip
+	rh = reset --hard
+	rs = reset --soft
+	st = status
+	stage = add
+	sub = submodule update --init
+	unstage = reset HEAD
 [color]
 	diff = auto
 	status = auto
