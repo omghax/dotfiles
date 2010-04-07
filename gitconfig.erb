@@ -8,6 +8,7 @@
 	cma = commit --amend
 	co = checkout
 	d = diff
+	datetag = !git tag `date \"+%Y-%m-%d-%H-%M\"` && echo `date \"+%Y-%m-%d-%H-%M\"`
 	dc = diff --cached
 	fe = fetch
 	ff = merge --ff-only
