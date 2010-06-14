@@ -30,6 +30,7 @@ alias rst='touch tmp/restart.txt'
 alias rc='script/rails console'
 alias rs='script/rails server'
 alias rg='script/rails generate'
+alias bi='bundle install'
 
 # commands starting with % for pasting from web
 alias %=' '
