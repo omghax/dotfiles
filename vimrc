@@ -191,6 +191,8 @@ set smartcase
 let g:Tlist_Ctags_Cmd="ctags --exclude='*.js'"
 set tags=./tags;
 
+" Fuzzy Finder
+map <Leader>t :FufFile<CR>
 let g:fuf_splitPathMatching=1
 
 " Open URL
