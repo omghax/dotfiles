@@ -125,7 +125,6 @@ map <leader>v V`]
 inoremap <C-_> <Space><BS><Esc>:call InsertCloseTag()<cr>a
 
 " Faster ESC
-inoremap <esc> <nop>
 inoremap jj <esc>
 
 " Scratch
