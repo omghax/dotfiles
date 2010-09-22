@@ -1,203 +1,174 @@
-" based on http://github.com/jferris/config_files/blob/master/vimrc
+filetype off
+call pathogen#runtime_append_all_bundles()
+filetype plugin indent on
 
-" Use Vim settings, rather then Vi settings (much better!).
-" This must be first, because it changes other options as a side effect.
 set nocompatible
 
-" allow backspacing over everything in insert mode
-set backspace=indent,eol,start
+" Security
+set modelines=0
 
-set nobackup
-set nowritebackup
-set history=50		" keep 50 lines of command line history
-set ruler		" show the cursor position all the time
-set showcmd		" display incomplete commands
-set incsearch		" do incremental searching
-
-" Don't use Ex mode, use Q for formatting
-map Q gq
-
-" This is an alternative that also works in block mode, but the deleted
-" text is lost and it only works for putting the current register.
-"vnoremap p "_dp
-
-" Switch syntax highlighting on, when the terminal has colors
-" Also switch on highlighting the last used search pattern.
-if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
-  syntax on
-  set hlsearch
-endif
-
-" Switch wrap off for everything
-set nowrap
-
-" Only do this part when compiled with support for autocommands.
-if has("autocmd")
-  " Enable file type detection.
-  " Use the default filetype settings, so that mail gets 'tw' set to 72,
-  " 'cindent' is on in C files, etc.
-  " Also load indent files, to automatically do language-dependent indenting.
-  filetype plugin indent on
-
-  " Set File type to 'text' for files ending in .txt
-  autocmd BufNewFile,BufRead *.txt setfiletype text
-
-  " Enable soft-wrapping for text files
-  autocmd FileType text,markdown,html,xhtml,eruby setlocal wrap linebreak nolist
-
-  " Put these in an autocmd group, so that we can delete them easily.
-  augroup vimrcEx
-  au!
-
-  " For all text files set 'textwidth' to 78 characters.
-  " autocmd FileType text setlocal textwidth=78
-
-  " When editing a file, always jump to the last known cursor position.
-  " Don't do it when the position is invalid or when inside an event handler
-  " (happens when dropping a file on gvim).
-  autocmd BufReadPost *
-    \ if line("'\"") > 0 && line("'\"") <= line("$") |
-    \   exe "normal g`\"" |
-    \ endif
-
-  augroup END
-
-else
-
-  set autoindent		" always set autoindenting on
-
-endif " has("autocmd")
-
-" if has("folding")
-  " set foldenable
-  " set foldmethod=syntax
-  " set foldlevel=1
-  " set foldnestmax=2
-  " set foldtext=strpart(getline(v:foldstart),0,50).'\ ...\ '.substitute(getline(v:foldend),'^[\ #]*','','g').'\ '
-" endif
-
-" Softtabs, 2 spaces
+" Tabs/spaces
 set tabstop=2
 set shiftwidth=2
+set softtabstop=2
 set expandtab
 
-" Always display the status line
+" Basic options
+set encoding=utf-8
+set scrolloff=3
+set autoindent
+set showmode
+set showcmd
+set hidden
+set wildmenu
+set wildmode=list:longest
+set visualbell
+set cursorline
+set ttyfast
+set ruler
+set backspace=indent,eol,start
+set relativenumber
 set laststatus=2
+set undofile
 
-" \ is the leader character
+" Leader
 let mapleader = ","
 
-" Edit the README_FOR_APP (makes :R commands work)
-map <Leader>R :e doc/README_FOR_APP<CR>
-
-" Leader shortcuts for Rails commands
-map <Leader>m :Rmodel 
-map <Leader>c :Rcontroller 
-map <Leader>v :Rview 
-map <Leader>u :Runittest 
-map <Leader>f :Rfunctionaltest 
-map <Leader>tm :RTmodel 
-map <Leader>tc :RTcontroller 
-map <Leader>tv :RTview 
-map <Leader>tu :RTunittest 
-map <Leader>tf :RTfunctionaltest 
-map <Leader>sm :RSmodel 
-map <Leader>sc :RScontroller 
-map <Leader>sv :RSview 
-map <Leader>su :RSunittest 
-map <Leader>sf :RSfunctionaltest 
-
-" Hide search highlighting
-map <Leader>h :set invhls <CR>
-
-" Opens an edit command with the path of the currently edited file filled in
-" Normal mode: <Leader>e
-map <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
-
-" Opens a tab edit command with the path of the currently edited file filled in
-" Normal mode: <Leader>t
-map <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
-
-" Move lines up and down
-map <C-J> :m +1 <CR>
-map <C-K> :m -2 <CR>
-
-" Inserts the path of the currently edited file into a command
-" Command mode: Ctrl+P
-cmap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
-
-" Duplicate a selection
-" Visual mode: D
-vmap D y'>p
-
-" Press Shift+P while in visual mode to replace the selection without
-" overwriting the default register
-vmap P p :call setreg('"', getreg('0')) <CR>
-
-" For Haml
-au! BufRead,BufNewFile *.haml         setfiletype haml
-
-" No Help, please
-nmap <F1> <Esc>
-
-" Press ^F from insert mode to insert the current file name
-imap <C-F> <C-R>=expand("%")<CR>
-
-" Maps autocomplete to tab
-imap <Tab> <C-N>
-
-imap <C-L> <Space>=><Space>
-
-" Display extra whitespace
-" set list listchars=tab:»·,trail:·
-
-" Edit routes
-command! Rroutes :e config/routes.rb
-command! Rschema :e db/schema.rb
-
-" Local config
-if filereadable(".vimrc.local")
-  source .vimrc.local
-endif
-
-" Use Ack instead of Grep when available
-if executable("ack")
-  set grepprg=ack\ -H\ --nogroup\ --nocolor\ --ignore-dir=tmp\ --ignore-dir=coverage
-endif
-
-" Color scheme
-" colorscheme vividchalk
-" highlight NonText guibg=#060606
-" highlight Folded  guibg=#0A0A0A guifg=#9090D0
-
-" Numbers
-set number
-set numberwidth=5
-
-" Snippets are activated by Shift+Tab
-let g:snippetsEmu_key = "<S-Tab>"
-
-" Tab completion options
-" (only complete to the longest unambiguous match, and show a menu)
-set completeopt=longest,menu
-set wildmode=list:longest,list:full
-set complete=.,t
-
-" case only matters with mixed case expressions
+" Searching
+nnoremap / /\v
+vnoremap / /\v
 set ignorecase
 set smartcase
+set incsearch
+set showmatch
+set hlsearch
+set gdefault
+map <leader><space> :noh<cr>
+nmap <tab> %
+vmap <tab> %
 
-" Tags
-let g:Tlist_Ctags_Cmd="ctags --exclude='*.js'"
-set tags=./tags;
+" Soft/hard wrapping
+set wrap
+set textwidth=79
+set formatoptions=qrn1
+set colorcolumn=85
 
-" Fuzzy Finder
-map <Leader>t :FufFile<CR>
-let g:fuf_splitPathMatching=1
+" Use the same symbols as TextMate for tabstops and EOLs
+set list
+set listchars=tab:▸\ ,eol:¬
 
-" Open URL
-command -bar -nargs=1 OpenURL :!open <args>
+" Color scheme (terminal)
+syntax on
+set background=dark
+colorscheme delek
 
-" Enable compiler support for ruby
-compiler ruby
+" NERD Tree
+map <F2> :NERDTreeToggle<cr>
+let NERDTreeIgnore=['.vim$', '\~$']
+
+" Use the damn hjkl keys
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+nnoremap <left> <nop>
+nnoremap <right> <nop>
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
+
+" And make them fucking work, too.
+nnoremap j gj
+nnoremap k gk
+
+" Easy buffer navigation
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+map <leader>w <C-w>v<C-w>l
+
+" Folding
+set foldlevelstart=0
+nnoremap <Space> za
+vnoremap <Space> za
+au BufNewFile,BufRead *.html map <leader>ft Vatzf
+
+" Fuck you, help key.
+set fuoptions=maxvert,maxhorz
+inoremap <F1> <ESC>:set invfullscreen<CR>a
+nnoremap <F1> :set invfullscreen<CR>
+vnoremap <F1> :set invfullscreen<CR>
+
+" Sort CSS
+map <leader>S ?{<CR>jV/^\s*\}?<CR>k:sort<CR>:noh<CR>
+
+" Clean whitespace
+map <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
+
+" Ack
+map <leader>a :Ack
+
+" Yankring
+nnoremap <silent> <F3> :YRShow<cr>
+nnoremap <silent> <leader>y :YRShow<cr>
+
+" Formatting, TextMate-style
+map <leader>q gqip
+
+" Easier linewise reselection
+map <leader>v V`]
+
+" HTML tag closing
+inoremap <C-_> <Space><BS><Esc>:call InsertCloseTag()<cr>a
+
+" Faster ESC
+inoremap <esc> <nop>
+inoremap jj <esc>
+
+" Scratch
+nmap <leader><tab> :Sscratch<cr><C-W>x<C-j>:resize 15<cr>
+
+" Rainbows!
+nmap <leader>R :RainbowParenthesesToggle<CR>
+
+" Edit .vimrc
+nmap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
+
+" Sudo to write
+cmap w!! w !sudo tee % >/dev/null
+
+" Shouldn't need shift
+nnoremap ; :
+
+" Easy brackets
+inoremap '' ''<left>
+inoremap "" ""<left>
+inoremap () ()<left>
+inoremap <> <><left>
+inoremap {} {}<left>
+inoremap [] []<left>
+
+" Save when losing focus
+au FocusLost * :wa
+
+if has('gui_running')
+  set guifont=AnonymousPro,Inconsolata,Andale\ Mono\ 11,DejaVu\ Sans\ Mono\ 11,Terminal
+  colorscheme railscasts
+  set background=dark
+
+  set go-=T
+  set go-=l
+  set go-=L
+  set go-=r
+  set go-=R
+
+  if has("gui_macvim")
+    macmenu &File.New\ Tab key=<nop>
+    map <leader>t :CommandT<cr>
+  end
+
+  highlight SpellBad term=underline gui=undercurl guisp=Orange
+else
+  colors elflord
+endif
 
