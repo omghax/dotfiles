@@ -115,6 +115,9 @@ nnoremap <silent> <leader>y :YRShow<cr>
 " Formatting, TextMate-style
 map <leader>q gqip
 
+" Navigation, TextMate-style
+map <leader>t :CommandT<cr>
+
 " Easier linewise reselection
 map <leader>v V`]
 
@@ -150,25 +153,4 @@ inoremap [] []<left>
 
 " Save when losing focus
 au FocusLost * :wa
-
-if has('gui_running')
-  set guifont=AnonymousPro,Inconsolata,Andale\ Mono\ 11,DejaVu\ Sans\ Mono\ 11,Terminal
-  colorscheme railscasts
-  set background=dark
-
-  set go-=T
-  set go-=l
-  set go-=L
-  set go-=r
-  set go-=R
-
-  if has("gui_macvim")
-    macmenu &File.New\ Tab key=<nop>
-    map <leader>t :CommandT<cr>
-  end
-
-  highlight SpellBad term=underline gui=undercurl guisp=Orange
-else
-  colors elflord
-endif
 
