@@ -142,14 +142,6 @@ cmap w!! w !sudo tee % >/dev/null
 " Shouldn't need shift
 nnoremap ; :
 
-" Easy brackets
-inoremap '' ''<left>
-inoremap "" ""<left>
-inoremap () ()<left>
-inoremap <> <><left>
-inoremap {} {}<left>
-inoremap [] []<left>
-
 " Save when losing focus
 au FocusLost * :wa
 
