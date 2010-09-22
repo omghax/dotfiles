@@ -112,6 +112,9 @@ map <leader>a :Ack
 nnoremap <silent> <F3> :YRShow<cr>
 nnoremap <silent> <leader>y :YRShow<cr>
 
+" BufExplorer
+nnoremap <F4> :BufExplorer<cr>
+
 " Formatting, TextMate-style
 map <leader>q gqip
 
