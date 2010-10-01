@@ -111,6 +111,9 @@ nnoremap <silent> <leader>y :YRShow<cr>
 " BufExplorer
 nnoremap <F4> :BufExplorer<cr>
 
+" TagList
+nnoremap <F5> :TlistToggle<cr>
+
 " Formatting, TextMate-style
 map <leader>q gqip
 
