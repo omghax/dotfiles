@@ -144,3 +144,8 @@ nnoremap ; :
 " Save when losing focus
 au FocusLost * :wa
 
+" Fugitive
+map <leader>gs :Gstatus<cr>
+map <leader>ga :Gadd<cr>
+map <leader>gc :Gcommit<cr>
+
