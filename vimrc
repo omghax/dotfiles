@@ -152,3 +152,8 @@ map <leader>gs :Gstatus<cr>
 map <leader>ga :Gadd<cr>
 map <leader>gc :Gcommit<cr>
 
+" Unimpaired (move line)
+nmap <C-K> [e
+nmap <C-J> ]e
+vmap <C-K> [egv
+vmap <C-J> ]egv
