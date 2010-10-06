@@ -155,10 +155,10 @@ map <leader>ga :Gadd<cr>
 map <leader>gc :Gcommit<cr>
 
 " Unimpaired (move line)
-nmap <C-K> [e
-nmap <C-J> ]e
-vmap <C-K> [egv
-vmap <C-J> ]egv
+nmap <S-C-k> [e
+nmap <S-C-j> ]e
+vmap <S-C-k> [egv
+vmap <S-C-j> ]egv
 
 " Visually select the text that was last edited / pasted
 nmap gV `[v`]
