@@ -146,6 +146,8 @@ nnoremap ; :
 
 " Save when losing focus
 au FocusLost * :wa
+" Also update Command-T index
+au FocusGained * :CommandTFlush
 
 " Fugitive
 map <leader>gs :Gstatus<cr>
