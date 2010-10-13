@@ -1,3 +1,5 @@
+" Most of this is from 'Coming Home to Vim'
+" http://stevelosh.com/blog/2010/09/coming-home-to-vim/
 filetype off
 call pathogen#runtime_append_all_bundles()
 filetype plugin indent on
