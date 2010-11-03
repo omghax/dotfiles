@@ -93,7 +93,8 @@ map <C-l> <C-w>l
 map <leader>w <C-w>v<C-w>l
 
 " Folding
-set foldlevelstart=0
+set foldmethod=manual
+set foldlevelstart=2
 nnoremap <Space> za
 vnoremap <Space> za
 au BufNewFile,BufRead *.html map <leader>ft Vatzf
