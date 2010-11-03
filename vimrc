@@ -66,6 +66,10 @@ if !has('gui_running')
   colorscheme delek
 endif
 
+" Source the vimrc file after saving it
+au BufWritePost .vimrc source $MYVIMRC
+au BufWritePost .gvimrc source $MYGVIMRC
+
 " NERD Tree
 map <F2> :NERDTreeToggle<cr>
 let NERDTreeIgnore=['.vim$', '\~$']
