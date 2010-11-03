@@ -61,9 +61,10 @@ set list
 set listchars=tab:▸\ ,eol:¬
 
 " Color scheme (terminal)
-syntax on
-set background=dark
-colorscheme delek
+if !has('gui_running')
+  set background=dark
+  colorscheme delek
+endif
 
 " NERD Tree
 map <F2> :NERDTreeToggle<cr>
