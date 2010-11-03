@@ -125,7 +125,7 @@ nnoremap <F4> :BufExplorer<cr>
 nnoremap <F5> :TlistToggle<cr>
 
 " Formatting, TextMate-style
-map <leader>q gqip
+map <leader>q gqi
 
 " Navigation, TextMate-style
 map <leader>t :CommandT<cr>
