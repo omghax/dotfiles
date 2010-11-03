@@ -170,3 +170,11 @@ vmap <D-j> ]egv
 
 " Visually select the text that was last edited / pasted
 nmap gV `[v`]
+
+" Ruby stuff
+
+" bind control-l to hashrocket
+imap <C-l> <Space>=><Space>"
+" convert word into ruby symbol
+imap <C-k> <C-o>b:<Esc>Ea
+nmap <C-k> lbi:<Esc>E
