@@ -47,6 +47,7 @@ set hlsearch
 set gdefault
 map <leader><space> :noh<cr>
 nmap <tab> %
+omap <tab> %
 vmap <tab> %
 
 " Soft/hard wrapping
