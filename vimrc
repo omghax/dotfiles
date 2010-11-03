@@ -152,9 +152,6 @@ nmap <leader>gv <C-w><C-v><C-l>:e $MYGVIMRC<cr>
 " Sudo to write
 cmap w!! w !sudo tee % >/dev/null
 
-" Shouldn't need shift
-nnoremap ; :
-
 " Save when losing focus
 au FocusLost * :wa
 " Also update Command-T index
