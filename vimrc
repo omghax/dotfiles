@@ -171,6 +171,9 @@ vmap <D-j> ]egv
 " Visually select the text that was last edited / pasted
 nmap gV `[v`]
 
+" Make Y consistent with C and D
+nnoremap Y y$
+
 " Ruby stuff
 
 " bind control-l to hashrocket
