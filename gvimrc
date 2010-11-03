@@ -2,7 +2,7 @@ set guioptions-=T " hide toolbar
 set lines=55 columns=100
 
 if has('gui_running')
-  set guifont=AnonymousPro:h12,Inconsolata,Andale\ Mono\ 12,DejaVu\ Sans\ Mono\ 12,Terminal
+  set guifont=Inconsolata:h14,AnonymousPro:h14,Andale\ Mono\ 14,DejaVu\ Sans\ Mono\ 14,Terminal
   colorscheme railscasts
   set background=dark
 
