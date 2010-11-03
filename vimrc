@@ -50,6 +50,7 @@ map <leader><space> :noh<cr>
 nmap <tab> %
 omap <tab> %
 vmap <tab> %
+imap <Tab> <C-n>
 
 " Soft/hard wrapping
 set wrap
