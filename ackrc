@@ -1,1 +1,5 @@
+--type-add=html=.haml
+--type-add=js=.javascript
 --type-add=ruby=.haml,.rake,.rsel
+--type-set=sass=.sass
+--type-set=scss=.scss
