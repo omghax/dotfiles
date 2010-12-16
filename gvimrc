@@ -31,7 +31,7 @@ color railscasts
 set guifont=Inconsolata:h14,AnonymousPro:h14,Andale\ Mono\ 14,DejaVu\ Sans\ Mono\ 14,Terminal
 
 " Project Tree
-autocmd VimEnter * NERDTree
+"autocmd VimEnter * NERDTree
 autocmd VimEnter * wincmd p
 autocmd VimEnter * call s:CdIfDirectory(expand("<amatch>"))
 
