@@ -82,7 +82,7 @@ set listchars=tab:▸\ ,eol:¬     " use the same chars as TextMate for tabstops
 
 set autoindent                  " automatic indent new lines
 set smartindent                 " be smart about it
-set nowrap                      " don't wrap lines
+set wrap                        " wrap lines
 set softtabstop=2               " yep, two
 set shiftwidth=2                " ..
 set tabstop=2
