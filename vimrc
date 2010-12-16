@@ -148,6 +148,10 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
+" Easy window resizing
+nmap <C-<> <C-w>20>
+nmap <C->> <C-w>20<
+
 " Open a new split buffer and jump into it
 map <Leader>w <C-w>v<C-w>l
 
