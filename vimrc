@@ -137,7 +137,7 @@ nnoremap <F4> :BufExplorer<CR>
 
 " F5 to toggle TagList, <Leader>rt to refresh ctags
 nnoremap <F5> :TlistToggle<CR>
-nmap <Leader>rt :!ctags --extra=+f -R *<CR><CR>
+nmap <Leader>rt :!ctags --extra=+f -R * `gem env home`/{bundler/gems,gems}/*<CR><CR>
 
 " Faster ESC
 inoremap jj <Esc>
