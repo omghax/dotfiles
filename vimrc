@@ -89,7 +89,6 @@ set tabstop=2
 set expandtab                   " expand tabs to spaces
 set nosmarttab                  " fuck tabs
 set formatoptions+=n            " support for numbered / bullet lists
-set textwidth=79                " wrap at 79 characters by default
 set colorcolumn=85              " colored column line at 85 characters
 set virtualedit=block           " allow virtual edit in visual block
 
