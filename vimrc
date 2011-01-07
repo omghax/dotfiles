@@ -218,3 +218,6 @@ au FileType python  set noexpandtab
 
 " NERD Tree
 let NERDTreeIgnore=['.vim$', '.rbc$', '\~$']
+
+" Ruby
+compiler ruby
