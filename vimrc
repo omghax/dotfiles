@@ -217,8 +217,8 @@ au FocusGained * :CommandTFlush " update CommandT index when focus regained
 au BufRead,BufNewFile {Gemfile,Rakefile,Thorfile,config.ru} set ft=ruby
 
 " Make and Python use real tabs
-au FileType make    set noexpandtab
-au FileType python  set noexpandtab
+au FileType make    setlocal noexpandtab
+au FileType python  setlocal noexpandtab
 
 " --------------------------------------------------
 " Plugins
