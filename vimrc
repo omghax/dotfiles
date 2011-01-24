@@ -24,11 +24,8 @@ set showcmd
 set hidden
 set cursorline
 set ttyfast
+set undofile                    " make undo history persist across file reloads
 set modelines=0                 " disable modelines for security reasons
-
-if has("undofile")
-  set undofile " make undo history persist across file reloads
-endif
 
 " --------------------------------------------------
 " Colors / Theme
@@ -56,15 +53,12 @@ endif
 set ruler                       " show the cursor position all the time
 set showcmd                     " display incomplete commands
 set nolazyredraw                " turn off lazy redraw
+set relativenumber              " relative (rather than absolute) line numbers
 set wildmenu                    " turn on wild menu
 set wildmode=list:longest,list:full
 set ch=2                        " command line height
 set backspace=indent,eol,start  " allow backspacing over everything in insert mode
 set nostartofline               " don't jump to the start of line when scrolling
-
-if has("relativenumber")
-  set relativenumber " relative (rather than absolute) line numbers
-endif
 
 " --------------------------------------------------
 " Visual Cues
@@ -95,11 +89,8 @@ set tabstop=2
 set expandtab                   " expand tabs to spaces
 set nosmarttab                  " fuck tabs
 set formatoptions+=n            " support for numbered / bullet lists
+set colorcolumn=85              " colored column line at 85 characters
 set virtualedit=block           " allow virtual edit in visual block
-
-if has("colorcolumn")
-  set colorcolumn=85 " colored column line at 85 characters
-endif
 
 " --------------------------------------------------
 " Mappings
