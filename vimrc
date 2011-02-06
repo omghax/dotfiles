@@ -56,6 +56,7 @@ set nolazyredraw                " turn off lazy redraw
 set relativenumber              " relative (rather than absolute) line numbers
 set wildmenu                    " turn on wild menu
 set wildmode=list:longest,list:full
+set wildignore+=*.o,*.obj,.git,*.rbc
 set ch=2                        " command line height
 set backspace=indent,eol,start  " allow backspacing over everything in insert mode
 set nostartofline               " don't jump to the start of line when scrolling
