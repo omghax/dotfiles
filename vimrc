@@ -157,7 +157,7 @@ map <Leader>v :vsplit <CR> <C-w>l
 map <Leader>h :split  <CR> <C-w>j
 
 " Clean whitespace
-map <Leader>W :%s/\s\+$//<CR>:let @/=''<CR>
+map <Leader>ws :%s/\s\+$//<CR>:let @/=''<CR>
 
 " Ack
 map <Leader>a :Ack
