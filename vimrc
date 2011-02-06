@@ -220,9 +220,27 @@ au FocusGained * :CommandTFlush " update CommandT index when focus regained
 " Gemfile, Rakefile, Thorfile, and config.ru are Ruby
 au BufRead,BufNewFile {Gemfile,Rakefile,Thorfile,config.ru} set ft=ruby
 
-" Make and Python use real tabs
-au FileType make    setlocal noexpandtab
-au FileType python  setlocal noexpandtab
+" Make uses real tabs
+au FileType make set noexpandtab
+
+" Make Python follow PEP8 (http://www.python.org/dev/peps/pep-0008/)
+au FileType python set tabstop=4 textwidth=79
+
+function s:setupWrapping()
+  set wrap
+  set wm=2
+  set textwidth=72
+endfunction
+
+function s:setupMarkup()
+  call s:setupWrapping()
+  map <buffer> <Leader>p :Mm <CR>
+endfunction
+
+" md, markdown, and mk are markdown and define buffer-local preview
+au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupMarkup()
+
+au BufRead,BufNewFile *.txt call s:setupWrapping()
 
 " --------------------------------------------------
 " Plugins
