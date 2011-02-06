@@ -226,13 +226,13 @@ au FileType make set noexpandtab
 " Make Python follow PEP8 (http://www.python.org/dev/peps/pep-0008/)
 au FileType python set tabstop=4 textwidth=79
 
-function s:setupWrapping()
+function! s:setupWrapping()
   set wrap
   set wm=2
   set textwidth=72
 endfunction
 
-function s:setupMarkup()
+function! s:setupMarkup()
   call s:setupWrapping()
   map <buffer> <Leader>p :Mm <CR>
 endfunction
