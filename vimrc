@@ -153,7 +153,8 @@ nmap <C-<> <C-w>20>
 nmap <C->> <C-w>20<
 
 " Open a new split buffer and jump into it
-map <Leader>w <C-w>v<C-w>l
+map <Leader>v :vsplit <CR> <C-w>l
+map <Leader>h :split  <CR> <C-w>j
 
 " Clean whitespace
 map <Leader>W :%s/\s\+$//<CR>:let @/=''<CR>
