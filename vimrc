@@ -246,6 +246,9 @@ au BufRead,BufNewFile *.txt call s:setupWrapping()
 " Plugins
 " --------------------------------------------------
 
+" Command-T
+let g:CommandTMaxHeight=20
+
 " NERD Tree
 let NERDTreeIgnore=['.vim$', '.rbc$', '\~$']
 
