@@ -185,6 +185,18 @@ nnoremap Y y$
 " Rainbows!
 nmap <Leader>R :RainbowParenthesesToggle<CR>
 
+" Opens an edit command with the path of the currently edited file
+" Normal mode: <Leader>e
+map <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
+
+" Opens a tab edit command with the path of the currently edited file
+" Normal mode: <Leader>te
+map <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
+
+" Inserts the path of the currently edited file into a command
+" Command mode: Ctrl+F
+cmap <C-F> <C-R>=expand("%:p:h") . "/" <CR>
+
 " --------------------------------------------------
 " Auto Commands
 " --------------------------------------------------
