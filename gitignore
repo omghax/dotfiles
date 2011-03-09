@@ -1,5 +1,6 @@
-.DS_Store
-.svn
+*.tmproj
 *~
 .*.swp
-
+.DS_Store
+.svn
+.yardoc
