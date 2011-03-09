@@ -139,6 +139,9 @@ nnoremap <F4> :BufExplorer<CR>
 nnoremap <F5> :TlistToggle<CR>
 nmap <Leader>rt :!ctags --extra=+f -R * `gem env home`/{bundler/gems,gems}/*<CR><CR>
 
+" F6 to toggle Gundo
+nnoremap <F6> :GundoToggle<CR>
+
 " Faster ESC
 inoremap jj <Esc>
 
