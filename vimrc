@@ -164,6 +164,7 @@ map <Leader>a :Ack
 
 " Command-T
 map <Leader>t :CommandT<CR>
+map <Leader>T :CommandTFlush<CR> :CommandT<CR>
 
 " Edit .vimrc
 nmap <Leader>ev  <C-w><C-v><C-l>:e $MYVIMRC<CR>
