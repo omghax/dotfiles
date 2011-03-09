@@ -216,9 +216,6 @@ au BufNewFile,BufRead *.html map <Leader>ft Vatzf
 " Bind Ctrl+l to hashrocket in ruby
 au FileType ruby imap <C-l> <Space>=><Space>
 
-au FocusLost * :wa              " save all files on focus lost
-au FocusGained * :CommandTFlush " update CommandT index when focus regained
-
 " Gemfile, Rakefile, Thorfile, and config.ru are Ruby
 au BufRead,BufNewFile {Gemfile,Rakefile,Thorfile,config.ru} set ft=ruby
 
