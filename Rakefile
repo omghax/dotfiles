@@ -48,3 +48,132 @@ def link_file(file)
     system %Q{ln -s "$PWD/#{file}" "$HOME/.#{file}"}
   end
 end
+
+module VIM
+  DIRS = %w[
+    vim/autoload
+    vim/bundle
+  ].freeze
+end
+
+directory 'tmp'
+VIM::DIRS.each do |dir|
+  directory(dir)
+end
+
+def vim_plugin_task(name, repo=nil)
+  dir = File.expand_path("tmp/#{name}")
+  bundle_target = File.expand_path("vim/bundle/#{name}")
+  subdirs = VIM::DIRS
+
+  namespace(name) do
+    if repo
+      file dir => 'tmp' do
+        if repo =~ /git$/
+          sh "git clone #{repo} #{dir}"
+        elsif repo =~ /download_script/
+          if filename = `curl --silent --head #{repo} | grep attachment`[/filename=(.+)/,1]
+            filename.strip!
+            sh "curl #{repo} > tmp/#{filename}"
+          else
+            raise ArgumentError, 'unable to determine script type'
+          end
+        elsif repo =~ /(tar|gz|zip|vim)$/
+          filename = File.basename(repo)
+          sh "curl #{repo} > tmp/#{filename}"
+        else
+          raise ArgumentError, 'unrecognized source URL for plugin'
+        end
+
+        case filename
+        when /zip$/
+          sh "unzip -o tmp/#{filename} -d #{dir}"
+        when /tar\.gz$/
+          dirname = File.basename(filename, '.tar.gz')
+          sh "tar zxvf tmp/#{filename}"
+          sh "mv #{dirname} #{dir}"
+        when /vim(\.gz)?$/
+          if filename =~ /gz$/
+            sh "gunzip -f tmp/#{filename}"
+            filename = File.basename(filename, '.gz')
+          end
+        end
+      end
+
+      task :pull => dir do
+        if repo =~ /git$/
+          Dir.chdir(dir) do
+            sh "git pull"
+          end
+        end
+      end
+
+      task :install => [:pull] + subdirs do
+        mkdir_p(bundle_target)
+        sh "cp -Rf #{dir}/* #{bundle_target}/"
+        Dir.chdir(bundle_target) do
+          yield if block_given?
+        end
+      end
+    else
+      task :install => subdirs do
+        yield if block_given?
+      end
+    end
+  end
+
+  desc "Install #{name} plugin"
+  task(name) do
+    puts
+    puts '*' * 40
+    puts "*#{"Installing #{name}".center(38)}*"
+    puts '*' * 40
+    puts
+    Rake::Task["#{name}:install"].invoke
+  end
+  task :vim => name
+end
+
+vim_plugin_task 'pathogen.vim' do
+  file 'pathogen.vim' => 'autoload' do
+    sh 'curl https://github.com/tpope/vim-pathogen/raw/master/autoload/pathogen.vim > vim/autoload/pathogen.vim'
+  end
+end
+
+vim_plugin_task 'ack.vim',        'git://github.com/mileszs/ack.vim.git'
+vim_plugin_task 'align',          'git://github.com/slack/vim-align.git'
+vim_plugin_task 'bufexplorer',    'git://github.com/slack/vim-bufexplorer.git'
+vim_plugin_task 'endwise',        'git://github.com/tpope/vim-endwise.git'
+vim_plugin_task 'fugitive',       'git://github.com/tpope/vim-fugitive.git'
+vim_plugin_task 'git',            'git://github.com/tpope/vim-git.git'
+vim_plugin_task 'gundo',          'git://github.com/sjl/gundo.vim.git'
+vim_plugin_task 'haml',           'git://github.com/tpope/vim-haml.git'
+vim_plugin_task 'markdown',       'git://github.com/tpope/vim-markdown.git'
+vim_plugin_task 'matchit',        'git://github.com/tsaleh/vim-matchit.git'
+vim_plugin_task 'nerdcommenter',  'git://github.com/ddollar/nerdcommenter.git'
+vim_plugin_task 'nerdtree',       'git://github.com/wycats/nerdtree.git'
+vim_plugin_task 'rails',          'git://github.com/tpope/vim-rails.git'
+vim_plugin_task 'rainbow',        'git://github.com/chrismetcalf/vim-rainbow.git'
+vim_plugin_task 'rspec',          'git://github.com/taq/vim-rspec.git'
+vim_plugin_task 'ruby',           'git://github.com/vim-ruby/vim-ruby.git'
+vim_plugin_task 'snipmate',       'git://github.com/msanders/snipmate.vim.git'
+vim_plugin_task 'supertab',       'git://github.com/ervandew/supertab.git'
+vim_plugin_task 'surround',       'git://github.com/tpope/vim-surround.git'
+vim_plugin_task 'taglist',        'git://github.com/vim-scripts/taglist.vim.git'
+vim_plugin_task 'unimpaired',     'git://github.com/tpope/vim-unimpaired.git'
+vim_plugin_task 'yankring',       'http://www.vim.org/scripts/download_script.php?src_id=13554'
+vim_plugin_task 'zencoding',      'git://github.com/mattn/zencoding-vim.git'
+
+vim_plugin_task 'command-t', 'git://github.com/wincent/Command-T.git' do
+  sh "find ruby -name '.gitignore' | xargs rm"
+  Dir.chdir('ruby/command-t') do
+    if File.exists?('/usr/bin/ruby1.8') # prefer 1.8 on *.deb systems
+      sh '/usr/bin/ruby1.8 extconf.rb'
+    elsif File.exists?('/usr/bin/ruby') # prefer system rubies
+      sh '/usr/bin/ruby extconf.rb'
+    elsif `rvm > /dev/null 2>&1` && $?.exitstatus == 0
+      sh 'rvm system ruby extconf.rb'
+    end
+    sh 'make clean && make'
+  end
+end
