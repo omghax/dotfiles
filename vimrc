@@ -26,8 +26,6 @@ set cursorline
 set ttyfast
 set undofile                    " make undo history persist across file reloads
 set modelines=0                 " disable modelines for security reasons
-set backupdir=~/.vim/backup
-set directory=~/.vim/backup
 
 " --------------------------------------------------
 " Colors / Theme
