@@ -135,9 +135,8 @@ nnoremap <silent> <F3> :YRShow<CR>
 " F4 to toggle BufExplorer
 nnoremap <F4> :BufExplorer<CR>
 
-" F5 to toggle TagList, <Leader>rt to refresh ctags
+" F5 to toggle TagList
 nnoremap <F5> :TlistToggle<CR>
-nmap <Leader>rt :!ctags --extra=+f -R * `gem env home`/{bundler/gems,gems}/*<CR><CR>
 
 " F6 to toggle Gundo
 nnoremap <F6> :GundoToggle<CR>
@@ -168,6 +167,10 @@ map <Leader>a :Ack
 " Command-T
 map <Leader>t :CommandT<CR>
 map <Leader>T :CommandTFlush<CR> :CommandT<CR>
+
+" CTags
+map <Leader>rt :!ctags --extra+=f -R *<CR><CR>
+map <C-\> :tnext<CR>
 
 " Edit .vimrc
 nmap <Leader>ev  <C-w><C-v><C-l>:e $MYVIMRC<CR>
