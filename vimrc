@@ -210,8 +210,9 @@ cmap <C-F> <C-R>=expand("%:p:h") . "/" <CR>
 " --------------------------------------------------
 
 " Jump to last position of buffer when opening
-au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") |
-                         \ exe "normal g'\"" | endif
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'\"" | endif
+endif
 
 " Source the vimrc file after saving it
 au BufWritePost .vimrc  source $MYVIMRC
