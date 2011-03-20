@@ -227,7 +227,7 @@ au FileType ruby imap <C-l> <Space>=><Space>
 au BufRead,BufNewFile {Gemfile,Rakefile,Thorfile,config.ru} set ft=ruby
 
 " Make uses real tabs
-au FileType make set noexpandtab
+au FileType make setlocal noexpandtab
 
 " Make Python follow PEP8 (http://www.python.org/dev/peps/pep-0008/)
 au FileType python set tabstop=4 textwidth=79
