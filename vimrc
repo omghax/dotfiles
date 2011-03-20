@@ -169,7 +169,7 @@ map <Leader>t :CommandT<CR>
 map <Leader>T :CommandTFlush<CR> :CommandT<CR>
 
 " CTags
-map <Leader>rt :!ctags --extra+=f -R *<CR><CR>
+map <Leader>rt :!ctags --extra=+f -R *<CR><CR>
 map <C-\> :tnext<CR>
 
 " Edit .vimrc
