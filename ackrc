@@ -1,3 +1,6 @@
+--ignore-dir=log
+--ignore-dir=tmp
+
 --type-add=html=.haml
 --type-add=js=.javascript
 --type-add=ruby=.haml,.rake,.rsel
