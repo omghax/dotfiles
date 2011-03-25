@@ -202,6 +202,20 @@ map <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
 " Command mode: Ctrl+F
 cmap <C-F> <C-R>=expand("%:p:h") . "/" <CR>
 
+" Tabular
+if exists(":Tabularize")
+  map <Leader>a :Tabularize /
+  nmap <Leader>a= :Tabularize /=<CR>
+  vmap <Leader>a= :Tabularize /=<CR>
+  omap <Leader>a= :Tabularize /=<CR>
+  nmap <Leader>a: :Tabularize /:\zs<CR>
+  vmap <Leader>a: :Tabularize /:\zs<CR>
+  omap <Leader>a: :Tabularize /:\zs<CR>
+  nmap <Leader>a> :Tabularize /=><CR>
+  vmap <Leader>a> :Tabularize /=><CR>
+  omap <Leader>a> :Tabularize /=><CR>
+endif
+
 " --------------------------------------------------
 " Auto Commands
 " --------------------------------------------------

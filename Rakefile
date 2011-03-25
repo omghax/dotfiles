@@ -141,7 +141,6 @@ vim_plugin_task 'pathogen.vim' do
 end
 
 vim_plugin_task 'ack.vim',        'git://github.com/mileszs/ack.vim.git'
-vim_plugin_task 'align',          'git://github.com/slack/vim-align.git'
 vim_plugin_task 'bufexplorer',    'git://github.com/slack/vim-bufexplorer.git'
 vim_plugin_task 'endwise',        'git://github.com/tpope/vim-endwise.git'
 vim_plugin_task 'fugitive',       'git://github.com/tpope/vim-fugitive.git'
@@ -159,6 +158,7 @@ vim_plugin_task 'ruby',           'git://github.com/vim-ruby/vim-ruby.git'
 vim_plugin_task 'snipmate',       'git://github.com/msanders/snipmate.vim.git'
 vim_plugin_task 'supertab',       'git://github.com/ervandew/supertab.git'
 vim_plugin_task 'surround',       'git://github.com/tpope/vim-surround.git'
+vim_plugin_task 'tabular',        'git://github.com/godlygeek/tabular.git'
 vim_plugin_task 'taglist',        'git://github.com/vim-scripts/taglist.vim.git'
 vim_plugin_task 'unimpaired',     'git://github.com/tpope/vim-unimpaired.git'
 vim_plugin_task 'yankring',       'http://www.vim.org/scripts/download_script.php?src_id=13554'
