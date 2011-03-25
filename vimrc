@@ -161,9 +161,6 @@ map <Leader>h :split  <CR> <C-w>j
 " Clean whitespace
 map <Leader>ws :%s/\s\+$//<CR>:let @/=''<CR>
 
-" Ack
-map <Leader>a :Ack
-
 " Command-T
 map <Leader>t :CommandT<CR>
 map <Leader>T :CommandTFlush<CR> :CommandT<CR>
