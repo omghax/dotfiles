@@ -243,6 +243,9 @@ au FileType make setlocal noexpandtab
 " Make Python follow PEP8 (http://www.python.org/dev/peps/pep-0008/)
 au FileType python set tabstop=4 textwidth=79
 
+" Automatically turn off syntax highlighting for large files (>1MB)
+autocmd BufWinEnter * if line2byte(line("$") + 1) > 1000000 | syntax clear | endif
+
 function! s:setupWrapping()
   set wrap
   set wm=2
