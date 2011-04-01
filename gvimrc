@@ -23,10 +23,6 @@ set guioptions-=L
 set guioptions-=r " no right scrollbar either
 set guioptions-=R
 
-
-" Default GUI color scheme
-color railscasts
-
 " Use better fonts, if available
 set guifont=Inconsolata:h14,AnonymousPro:h14,Andale\ Mono\ 14,DejaVu\ Sans\ Mono\ 14,Terminal
 
