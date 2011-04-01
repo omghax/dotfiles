@@ -73,8 +73,8 @@ set smartcase                   " ...unless you search with uppercase chars
 set hlsearch                    " highlight searches
 set visualbell                  " shut the fuck up
 set gdefault                    " make substitutions global by default
-set list
-set listchars=tab:▸\ ,eol:¬     " use the same chars as TextMate for tabstops / EOLs
+set list                        " show invisible characters like tabstops / EOLs
+set listchars=tab:▸\ ,eol:¬     " ...and use the same chars as TextMate for them
 
 " --------------------------------------------------
 " Text Formatting
