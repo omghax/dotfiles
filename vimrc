@@ -42,7 +42,6 @@ if &t_Co > 2 || has("gui_running")
     set t_Sb=[4%dm
   endif
   syntax on
-  set hlsearch
   colorscheme railscasts
 endif
 
