@@ -42,7 +42,8 @@ if &t_Co > 2 || has("gui_running")
     set t_Sb=[4%dm
   endif
   syntax on
-  colorscheme railscasts
+  set background=dark
+  colorscheme solarized
 endif
 
 " --------------------------------------------------

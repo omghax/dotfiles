@@ -157,6 +157,7 @@ vim_plugin_task 'rainbow',        'git://github.com/chrismetcalf/vim-rainbow.git
 vim_plugin_task 'rspec',          'git://github.com/taq/vim-rspec.git'
 vim_plugin_task 'ruby',           'git://github.com/vim-ruby/vim-ruby.git'
 vim_plugin_task 'snipmate',       'git://github.com/msanders/snipmate.vim.git'
+vim_plugin_task 'solarized',      'git://github.com/altercation/vim-colors-solarized.git'
 vim_plugin_task 'supertab',       'git://github.com/ervandew/supertab.git'
 vim_plugin_task 'surround',       'git://github.com/tpope/vim-surround.git'
 vim_plugin_task 'tabular',        'git://github.com/godlygeek/tabular.git'
