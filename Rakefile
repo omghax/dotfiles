@@ -146,7 +146,6 @@ vim_plugin_task 'color-sampler',  'git://github.com/vim-scripts/Color-Sampler-Pa
 vim_plugin_task 'endwise',        'git://github.com/tpope/vim-endwise.git'
 vim_plugin_task 'fugitive',       'git://github.com/tpope/vim-fugitive.git'
 vim_plugin_task 'git',            'git://github.com/tpope/vim-git.git'
-vim_plugin_task 'gundo',          'git://github.com/sjl/gundo.vim.git'
 vim_plugin_task 'haml',           'git://github.com/tpope/vim-haml.git'
 vim_plugin_task 'markdown',       'git://github.com/tpope/vim-markdown.git'
 vim_plugin_task 'matchit',        'git://github.com/tsaleh/vim-matchit.git'
@@ -165,6 +164,12 @@ vim_plugin_task 'taglist',        'git://github.com/vim-scripts/taglist.vim.git'
 vim_plugin_task 'unimpaired',     'git://github.com/tpope/vim-unimpaired.git'
 vim_plugin_task 'yankring',       'http://www.vim.org/scripts/download_script.php?src_id=13554'
 vim_plugin_task 'zencoding',      'git://github.com/mattn/zencoding-vim.git'
+
+vim_plugin_task 'gundo', 'git://github.com/sjl/gundo.vim.git' do
+  # For whatever reason, the gundo repo includes symbolic links to the author's
+  # home directory. These wreak havoc when updating, so we remove them here.
+  sh "find . -type 'l' | xargs rm"
+end
 
 vim_plugin_task 'command-t', 'git://github.com/wincent/Command-T.git' do
   sh "find ruby -name '.gitignore' | xargs rm"
