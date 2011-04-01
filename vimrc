@@ -222,8 +222,8 @@ if has("autocmd")
   autocmd! BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'\"" | endif
 
   " Source the vimrc file after saving it
-  autocmd! BufWritePost .vimrc  source $MYVIMRC
-  autocmd! BufWritePost .gvimrc source $MYGVIMRC
+  autocmd! BufWritePost $MYVIMRC source $MYVIMRC | if has("gui_running") | source $MYGVIMRC | endif
+  autocmd! BufWritePost $MYGVIMRC source $MYGVIMRC
 
   autocmd! BufNewFile,BufRead *.html map <Leader>ft Vatzf
 
