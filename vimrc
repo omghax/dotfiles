@@ -220,47 +220,47 @@ endif
 " Auto Commands
 " --------------------------------------------------
 
-" Jump to last position of buffer when opening
 if has("autocmd")
-  au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'\"" | endif
+  " Jump to last position of buffer when opening
+  autocmd! BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'\"" | endif
+
+  " Source the vimrc file after saving it
+  autocmd! BufWritePost .vimrc  source $MYVIMRC
+  autocmd! BufWritePost .gvimrc source $MYGVIMRC
+
+  autocmd! BufNewFile,BufRead *.html map <Leader>ft Vatzf
+
+  " Bind Ctrl+l to hashrocket in ruby
+  autocmd! FileType ruby imap <C-l> <Space>=><Space>
+
+  " Gemfile, Rakefile, Thorfile, and config.ru are Ruby
+  autocmd! BufRead,BufNewFile {Gemfile,Rakefile,Thorfile,config.ru} set ft=ruby
+
+  " Make uses real tabs
+  autocmd! FileType make setlocal noexpandtab
+
+  " Make Python follow PEP8 (http://www.python.org/dev/peps/pep-0008/)
+  autocmd! FileType python set tabstop=4 textwidth=79
+
+  " Automatically turn off syntax highlighting for large files (>1MB)
+  autocmd! BufWinEnter * if line2byte(line("$") + 1) > 1000000 | syntax clear | endif
+
+  function! s:setupWrapping()
+    set wrap
+    set wm=2
+    set textwidth=72
+  endfunction
+
+  function! s:setupMarkup()
+    call s:setupWrapping()
+    map <buffer> <Leader>p :Mm <CR>
+  endfunction
+
+  " md, markdown, and mk are markdown and define buffer-local preview
+  autocmd! BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupMarkup()
+
+  autocmd! BufRead,BufNewFile *.txt call s:setupWrapping()
 endif
-
-" Source the vimrc file after saving it
-au BufWritePost .vimrc  source $MYVIMRC
-au BufWritePost .gvimrc source $MYGVIMRC
-
-au BufNewFile,BufRead *.html map <Leader>ft Vatzf
-
-" Bind Ctrl+l to hashrocket in ruby
-au FileType ruby imap <C-l> <Space>=><Space>
-
-" Gemfile, Rakefile, Thorfile, and config.ru are Ruby
-au BufRead,BufNewFile {Gemfile,Rakefile,Thorfile,config.ru} set ft=ruby
-
-" Make uses real tabs
-au FileType make setlocal noexpandtab
-
-" Make Python follow PEP8 (http://www.python.org/dev/peps/pep-0008/)
-au FileType python set tabstop=4 textwidth=79
-
-" Automatically turn off syntax highlighting for large files (>1MB)
-autocmd BufWinEnter * if line2byte(line("$") + 1) > 1000000 | syntax clear | endif
-
-function! s:setupWrapping()
-  set wrap
-  set wm=2
-  set textwidth=72
-endfunction
-
-function! s:setupMarkup()
-  call s:setupWrapping()
-  map <buffer> <Leader>p :Mm <CR>
-endfunction
-
-" md, markdown, and mk are markdown and define buffer-local preview
-au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupMarkup()
-
-au BufRead,BufNewFile *.txt call s:setupWrapping()
 
 " --------------------------------------------------
 " Plugins
