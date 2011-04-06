@@ -1,7 +1,10 @@
+*.dSYM
+*.o
 *.tmproj
 *~
 .*.swp
 .DS_Store
 .svn
 .yardoc
+a.out
 tags
