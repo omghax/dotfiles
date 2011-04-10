@@ -1,3 +1,0 @@
-export PATH="$HOME/bin:$HOME/homebrew/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/git/bin:$PATH"
-export MANPATH="$HOME/homebrew/man:/usr/local/man:/usr/local/mysql/man:/usr/local/git/man:$MANPATH"
-export GEM_HOME="$HOME/homebrew/Cellar/gems/1.8"
