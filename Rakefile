@@ -164,6 +164,7 @@ vim_plugin_task 'tabular',        'git://github.com/godlygeek/tabular.git'
 vim_plugin_task 'taglist',        'git://github.com/vim-scripts/taglist.vim.git'
 vim_plugin_task 'unimpaired',     'git://github.com/tpope/vim-unimpaired.git'
 vim_plugin_task 'yankring',       'http://www.vim.org/scripts/download_script.php?src_id=13554'
+vim_plugin_task 'web-indent',     'http://www.vim.org/scripts/download_script.php?src_id=13005'
 vim_plugin_task 'zencoding',      'git://github.com/mattn/zencoding-vim.git'
 
 vim_plugin_task 'gundo', 'git://github.com/sjl/gundo.vim.git' do
