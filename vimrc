@@ -163,7 +163,11 @@ map <Leader>ws :%s/\s\+$//<CR>:let @/=''<CR>
 
 " Command-T
 map <Leader>t :CommandT<CR>
-map <Leader>T :CommandTFlush<CR> :CommandT<CR>
+function! CommandTFlushAndReload()
+  :CommandTFlush
+  :CommandT
+endfunction
+map <Leader>T :exec CommandTFlushAndReload()<CR>
 
 " CTags
 map <Leader>rt :!ctags --extra=+f -R *<CR><CR>
