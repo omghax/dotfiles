@@ -51,4 +51,6 @@ def paste
   `pbpaste`
 end
 
-load File.dirname(__FILE__) + '/.railsrc' if $0 == 'irb' && ENV['RAILS_ENV']
+if ($0 == 'irb' && ENV['RAILS_ENV']) || ($0 == 'script/rails' && defined?(Rails))
+  load File.dirname(__FILE__) + '/.railsrc'
+end
