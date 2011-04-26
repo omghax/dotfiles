@@ -218,6 +218,11 @@ nmap <Leader>a> :Tabularize /=><CR>
 vmap <Leader>a> :Tabularize /=><CR>
 omap <Leader>a> :Tabularize /=><CR>
 
+" Sort lines
+nmap <Leader>s :sort<CR>
+" Sort lines and remove duplicates
+nmap <Leader>S :sort u<CR>
+
 " --------------------------------------------------
 " Auto Commands
 " --------------------------------------------------
