@@ -5,6 +5,7 @@
 *~
 .*.swp
 .DS_Store
+.rvmrc
 .svn
 .yardoc
 a.out
