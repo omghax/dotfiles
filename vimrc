@@ -240,8 +240,8 @@ if has("autocmd")
   " Bind Ctrl+l to hashrocket in ruby
   autocmd! FileType ruby imap <C-l> <Space>=><Space>
 
-  " Gemfile, Rakefile, Thorfile, and config.ru are Ruby
-  autocmd! BufRead,BufNewFile {Gemfile,Rakefile,Thorfile,config.ru} set ft=ruby
+  " Buildfile, Gemfile, Rakefile, Thorfile, and config.ru are Ruby
+  autocmd! BufRead,BufNewFile {Buildfile,Gemfile,Rakefile,Thorfile,config.ru} set ft=ruby
 
   " Make uses real tabs
   autocmd! FileType make setlocal noexpandtab
