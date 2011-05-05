@@ -272,6 +272,16 @@ if has("autocmd")
   autocmd! BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupMarkup()
 
   autocmd! BufRead,BufNewFile *.txt call s:setupWrapping()
+
+  " omni-completion
+  autocmd FileType c set omnifunc=ccomplete#Complete
+  autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+  autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+  autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+  autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+  autocmd FileType python set omnifunc=pythoncomplete#Complete
+  autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete 
+  autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 endif
 
 " --------------------------------------------------
