@@ -26,6 +26,7 @@ set cursorline
 set ttyfast
 set undofile                    " make undo history persist across file reloads
 set modelines=0                 " disable modelines for security reasons
+set confirm                     " confirm, don't abort, when closing dirty files
 
 " --------------------------------------------------
 " Colors / Theme
