@@ -135,8 +135,8 @@ nnoremap <silent> <F3> :YRShow<CR>
 " F4 to toggle BufExplorer
 nnoremap <F4> :BufExplorer<CR>
 
-" F5 to toggle TagList
-nnoremap <F5> :TlistToggle<CR>
+" F5 to toggle Tagbar
+nnoremap <F5> :TagbarToggle<CR>
 
 " F6 to toggle Gundo
 nnoremap <F6> :GundoToggle<CR>

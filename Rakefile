@@ -163,7 +163,7 @@ vim_plugin_task 'solarized',      'git://github.com/altercation/vim-colors-solar
 vim_plugin_task 'supertab',       'git://github.com/ervandew/supertab.git'
 vim_plugin_task 'surround',       'git://github.com/tpope/vim-surround.git'
 vim_plugin_task 'tabular',        'git://github.com/godlygeek/tabular.git'
-vim_plugin_task 'taglist',        'git://github.com/vim-scripts/taglist.vim.git'
+vim_plugin_task 'tagbar',         'git://github.com/majutsushi/tagbar.git'
 vim_plugin_task 'unimpaired',     'git://github.com/tpope/vim-unimpaired.git'
 vim_plugin_task 'yankring',       'http://www.vim.org/scripts/download_script.php?src_id=13554'
 vim_plugin_task 'web-indent',     'http://www.vim.org/scripts/download_script.php?src_id=13005'
