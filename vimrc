@@ -121,6 +121,11 @@ nnoremap k gk
 vnoremap j gj
 vnoremap k gk
 
+" Reflow content with Q.
+nnoremap Q gqap
+onoremap Q gqq
+vnoremap Q gq
+
 " F1 to toggle fullscreen
 inoremap <F1> <Esc>:set invfullscreen<CR>a
 nnoremap <F1> :set invfullscreen<CR>
