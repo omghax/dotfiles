@@ -9,9 +9,6 @@
 # highlight the matching text
 --color
 
-# print 1 line of context before and after a matching line
---context=1
-
 # print a filename heading above each file's results and print a break between
 # results from different files
 --group
