@@ -1,6 +1,7 @@
 *.dSYM
 *.o
 *.out
+*.rbc
 *.tmproj
 *~
 .*.swp
