@@ -61,6 +61,8 @@ set wildignore+=*.o,*.obj,.git,*.rbc,tmp
 set ch=2                        " command line height
 set backspace=indent,eol,start  " allow backspacing over everything in insert mode
 set nostartofline               " don't jump to the start of line when scrolling
+set foldmethod=indent           " use indent folding (syntax-based is slow)
+set foldlevelstart=20           " don't fold everything when opening a file
 
 " --------------------------------------------------
 " Visual Cues
@@ -126,6 +128,10 @@ vnoremap k gk
 nnoremap Q gqap
 onoremap Q gqq
 vnoremap Q gq
+
+" Toggle folding with space.
+nnoremap <Space> za
+vnoremap <Space> za
 
 " F1 to toggle fullscreen
 inoremap <F1> <Esc>:set invfullscreen<CR>a
