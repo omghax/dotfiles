@@ -24,9 +24,12 @@ set showcmd
 set hidden
 set cursorline
 set ttyfast
-set undofile                    " make undo history persist across file reloads
 set modelines=0                 " disable modelines for security reasons
 set confirm                     " confirm, don't abort, when closing dirty files
+
+if exists("&undofile")
+  set undofile                  " make undo history persist across file reloads
+endif
 
 " --------------------------------------------------
 " Colors / Theme
@@ -54,7 +57,6 @@ endif
 set ruler                       " show the cursor position all the time
 set showcmd                     " display incomplete commands
 set nolazyredraw                " turn off lazy redraw
-set relativenumber              " relative (rather than absolute) line numbers
 set wildmenu                    " turn on wild menu
 set wildmode=list:longest,list:full
 set wildignore+=*.o,*.obj,.git,*.rbc,tmp
@@ -63,6 +65,10 @@ set backspace=indent,eol,start  " allow backspacing over everything in insert mo
 set nostartofline               " don't jump to the start of line when scrolling
 set foldmethod=indent           " use indent folding (syntax-based is slow)
 set foldlevelstart=20           " don't fold everything when opening a file
+
+if exists("&relativenumber")
+  set relativenumber            " relative (rather than absolute) line numbers
+endif
 
 " --------------------------------------------------
 " Visual Cues
@@ -93,8 +99,11 @@ set tabstop=2
 set expandtab                   " expand tabs to spaces
 set nosmarttab                  " fuck tabs
 set formatoptions+=n            " support for numbered / bullet lists
-set colorcolumn=85              " colored column line at 85 characters
 set virtualedit=block           " allow virtual edit in visual block
+
+if exists("&colorcolumn")
+  set colorcolumn=85            " colored column line at 85 characters
+endif
 
 " --------------------------------------------------
 " Mappings
