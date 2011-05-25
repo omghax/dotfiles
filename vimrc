@@ -46,8 +46,13 @@ if &t_Co > 2 || has("gui_running")
     set t_Sb=[4%dm
   endif
   syntax on
-  set background=light
-  colorscheme solarized
+
+  if has("gui_running")
+    set background=light
+    colorscheme solarized
+  else
+    colorscheme vividchalk
+  endif
 endif
 
 " --------------------------------------------------
