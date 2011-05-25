@@ -1,1 +1,16 @@
 export PS1="\n\[\e[0;32m\]\u\[\e[0m\]@\[\e[0;33m\]\h\[\e[0m\]:\w\n\! $ "
+
+export LS_OPTIONS='--color=auto'
+export CLICOLOR='Yes'
+# DIR           = Bx (bold red text with default background)
+# SYM_LINK      = gx (cyan text with default background)
+# SOCKET        = fx (magenta text with default background)
+# PIPE          = fx (magenta text with default background)
+# EXE           = cx (green text with default background)
+# BLOCK_SP      = dx (brown text with default background)
+# CHAR_SP       = dx (brown text with default background)
+# EXE_SUID      = hb (light grey text with red background)
+# EXE_GUID      = ad (black text with brown background)
+# DIR_STICKY    = bx (red text with default background)
+# DIR_WO_STICKY = bx (red text with default background)
+export LSCOLORS='Bxgxfxfxcxdxdxhbadbxbx'
