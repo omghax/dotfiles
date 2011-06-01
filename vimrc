@@ -143,9 +143,9 @@ nnoremap Q gqap
 onoremap Q gqq
 vnoremap Q gq
 
-" Toggle folding with space.
-nnoremap <Space> za
-vnoremap <Space> za
+" Toggle folding.
+nnoremap <Leader>f za
+vnoremap <Leader>f za
 
 " F1 to toggle fullscreen
 inoremap <F1> <Esc>:set invfullscreen<CR>a
