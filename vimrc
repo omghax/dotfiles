@@ -138,6 +138,10 @@ nnoremap k gk
 vnoremap j gj
 vnoremap k gk
 
+" Use the arrow keys for something useful
+map <Right> :bn<CR>
+map <Left> :bp<CR>
+
 " Reflow content with Q.
 nnoremap Q gqap
 onoremap Q gqq
