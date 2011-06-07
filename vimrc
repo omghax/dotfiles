@@ -142,6 +142,9 @@ vnoremap k gk
 map <Right> :bn<CR>
 map <Left> :bp<CR>
 
+" Leader-cd to switch to the directory of the open buffer
+map <Leader>cd :cd %:p:h<CR>
+
 " Reflow content with Q.
 nnoremap Q gqap
 onoremap Q gqq
