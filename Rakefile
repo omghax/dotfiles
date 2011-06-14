@@ -136,7 +136,7 @@ end
 
 vim_plugin_task 'pathogen.vim' do
   file 'pathogen.vim' => 'autoload' do
-    sh 'curl https://github.com/tpope/vim-pathogen/raw/master/autoload/pathogen.vim > vim/autoload/pathogen.vim'
+    sh 'curl -fL https://github.com/tpope/vim-pathogen/raw/master/autoload/pathogen.vim > vim/autoload/pathogen.vim'
   end
 end
 
