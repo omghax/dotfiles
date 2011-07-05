@@ -32,6 +32,9 @@
 --type-set=sass=.sass
 --type-set=scss=.scss
 
+# and handlebars
+--type-set=handlebars=.handlebars
+
 # ignore directories for Rails projects
 --ignore-dir=log
 --ignore-dir=tmp
