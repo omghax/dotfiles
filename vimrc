@@ -177,6 +177,7 @@ nnoremap <F5> :TagbarToggle<CR>
 nnoremap <F6> :GundoToggle<CR>
 
 " Faster ESC
+inoremap <Control>[ <Esc>
 inoremap jj <Esc>
 
 " Easy buffer navigation
