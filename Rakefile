@@ -147,6 +147,7 @@ vim_plugin_task 'color-sampler',  'git://github.com/vim-scripts/Color-Sampler-Pa
 vim_plugin_task 'conque',         'http://conque.googlecode.com/files/conque_2.0.tar.gz'
 vim_plugin_task 'endwise',        'git://github.com/tpope/vim-endwise.git'
 vim_plugin_task 'fugitive',       'git://github.com/tpope/vim-fugitive.git'
+vim_plugin_task 'gist-vim',       'git://github.com/mattn/gist-vim.git'
 vim_plugin_task 'git',            'git://github.com/tpope/vim-git.git'
 vim_plugin_task 'haml',           'git://github.com/tpope/vim-haml.git'
 vim_plugin_task 'javascript',     'git://github.com/pangloss/vim-javascript.git'
