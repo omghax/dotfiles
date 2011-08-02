@@ -156,6 +156,9 @@ vnoremap Q gq
 nnoremap <Leader>f za
 vnoremap <Leader>f za
 
+" Leader-A to ack for the word under the cursor
+nnoremap <Leader>A :Ack "\b<cword>\b"<CR>
+
 " F1 to toggle fullscreen
 inoremap <F1> <Esc>:set invfullscreen<CR>a
 nnoremap <F1> :set invfullscreen<CR>
