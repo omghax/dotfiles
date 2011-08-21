@@ -196,6 +196,9 @@ map <Leader>h :split  <CR> <C-w>j
 " Clean whitespace
 map <Leader>ws :%s/\s\+$//<CR>:let @/=''<CR>
 
+" Close all buffers
+nnoremap <Leader>bd :bufdo bd<CR>
+
 " Command-T
 map <Leader>t :CommandT<CR>
 function! CommandTFlushAndReload()
