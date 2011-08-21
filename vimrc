@@ -255,6 +255,9 @@ omap <Leader>a: :Tabularize /:\zs<CR>
 nmap <Leader>a> :Tabularize /=><CR>
 vmap <Leader>a> :Tabularize /=><CR>
 omap <Leader>a> :Tabularize /=><CR>
+nmap <Leader>a, :Tabularize /,\zs<CR>
+vmap <Leader>a, :Tabularize /,\zs<CR>
+omap <Leader>a, :Tabularize /,\zs<CR>
 
 " Sort lines
 nmap <Leader>s :sort<CR>
