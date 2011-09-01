@@ -18,6 +18,12 @@ if has("gui_macvim")
 
   " Command-/ to toggle comments
   map <D-/> <Plug>NERDCommenterToggle<CR>
+
+  " Unimpaired
+  nmap <D-k> [e
+  nmap <D-j> ]e
+  vmap <D-k> [egv
+  vmap <D-j> ]egv
 endif
 
 set guioptions-=T " start without the toolbar
