@@ -406,7 +406,7 @@ match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 nmap <silent> <leader>c /^\(<\\|=\\|>\)\{7\}\([^=].\+\)\?$<CR>
 " }}}
 
-" Filetype specific handling {{{
+" FileType specific handling {{{
 " only do this part when compiled with support for autocommands
 if has("autocmd")
   " Automatically turn off syntax highlighting for large files (>1MB) {{{
@@ -417,20 +417,20 @@ if has("autocmd")
     au!
 
     " Show invisible characters in all of these files
-    autocmd filetype vim setlocal list
-    autocmd filetype python,rst setlocal list
-    autocmd filetype ruby setlocal list
-    autocmd filetype javascript,css setlocal list
+    autocmd FileType vim setlocal list
+    autocmd FileType python,rst setlocal list
+    autocmd FileType ruby setlocal list
+    autocmd FileType javascript,css setlocal list
   augroup end "}}}
 
   augroup omni_completion "{{{
-    autocmd filetype python set omnifunc=pythoncomplete#Complete
-    autocmd filetype javascript set omnifunc=javascriptcomplete#CompleteJS
-    autocmd filetype html set omnifunc=htmlcomplete#CompleteTags
-    autocmd filetype css set omnifunc=csscomplete#CompleteCSS
-    autocmd filetype xml set omnifunc=xmlcomplete#CompleteTags
-    autocmd filetype php set omnifunc=phpcomplete#CompletePHP
-    autocmd filetype c set omnifunc=ccomplete#Complete
+    autocmd FileType python set omnifunc=pythoncomplete#Complete
+    autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+    autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+    autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+    autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
+    autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+    autocmd FileType c set omnifunc=ccomplete#Complete
   augroup end "}}}
 
   augroup vim_files "{{{
@@ -438,15 +438,15 @@ if has("autocmd")
 
     " Bind <F1> to show the keyword under cursor
     " general help can still be entered manually, with :h
-    autocmd filetype vim noremap <buffer> <F1> <Esc>:help <C-r><C-w><CR>
-    autocmd filetype vim noremap! <buffer> <F1> <Esc>:help <C-r><C-w><CR>
+    autocmd FileType vim noremap <buffer> <F1> <Esc>:help <C-r><C-w><CR>
+    autocmd FileType vim noremap! <buffer> <F1> <Esc>:help <C-r><C-w><CR>
   augroup end "}}}
 
   augroup html_files "{{{
     au!
 
     " This function detects, based on HTML content, whether this is a
-    " Django template, or a plain HTML file, and sets filetype accordingly
+    " Django template, or a plain HTML file, and sets FileType accordingly
     fun! s:DetectHTMLVariant()
       let n = 1
       while n < 50 && n < line("$")
@@ -465,8 +465,8 @@ if has("autocmd")
 
     " Auto-closing of HTML/XML tags
     let g:closetag_default_xml=1
-    autocmd filetype html,htmldjango let b:closetag_html_style=1
-    " autocmd filetype html,xhtml,xml source ~/.vim/scripts/closetag.vim
+    autocmd FileType html,htmldjango let b:closetag_html_style=1
+    " autocmd FileType html,xhtml,xml source ~/.vim/scripts/closetag.vim
   augroup end " }}}
 
   augroup python_files "{{{
@@ -492,22 +492,22 @@ if has("autocmd")
 
     " PEP8 compliance (set 1 tab = 4 chars explicitly, even if set
     " earlier, as it is important)
-    autocmd filetype python setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4
-    autocmd filetype python setlocal textwidth=80
-    autocmd filetype python match ErrorMsg '\%>80v.\+'
+    autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4
+    autocmd FileType python setlocal textwidth=80
+    autocmd FileType python match ErrorMsg '\%>80v.\+'
 
     " But disable autowrapping as it is super annoying
-    autocmd filetype python setlocal formatoptions-=t
+    autocmd FileType python setlocal formatoptions-=t
 
     " Folding for Python (uses syntax/python.vim for fold definitions)
-    "autocmd filetype python,rst setlocal nofoldenable
-    "autocmd filetype python setlocal foldmethod=expr
+    "autocmd FileType python,rst setlocal nofoldenable
+    "autocmd FileType python setlocal foldmethod=expr
 
     " Python runners
-    autocmd filetype python map <buffer> <F5> :w<CR>:!python %<CR>
-    autocmd filetype python imap <buffer> <F5> <Esc>:w<CR>:!python %<CR>
-    autocmd filetype python map <buffer> <S-F5> :w<CR>:!ipython %<CR>
-    autocmd filetype python imap <buffer> <S-F5> <Esc>:w<CR>:!ipython %<CR>
+    autocmd FileType python map <buffer> <F5> :w<CR>:!python %<CR>
+    autocmd FileType python imap <buffer> <F5> <Esc>:w<CR>:!python %<CR>
+    autocmd FileType python map <buffer> <S-F5> :w<CR>:!ipython %<CR>
+    autocmd FileType python imap <buffer> <S-F5> <Esc>:w<CR>:!ipython %<CR>
 
     " Run a quick static syntax check every time we save a Python file
     autocmd BufWritePost *.py call Pyflakes()
@@ -519,49 +519,49 @@ if has("autocmd")
     " Buildfile, Gemfile, Rakefile, Thorfile, and config.ru are all Ruby
     autocmd BufRead,BufNewFile {Buildfile,Gemfile,Rakefile,Thorfile,config.ru} set ft=ruby
 
-    autocmd filetype ruby setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
+    autocmd FileType ruby setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
 
     " Ruby runners
-    autocmd filetype ruby map <buffer> <F5> :w<CR>:!ruby %<CR>
-    autocmd filetype ruby imap <buffer> <F5> <Esc>:w<CR>:!ruby %<CR>
-    autocmd filetype ruby map <buffer> <S-F5> :w<Esc>:!irb %<CR>
-    autocmd filetype ruby imap <buffer> <S-F5> <Esc>:w<CR>:!irb %<CR>
+    autocmd FileType ruby map <buffer> <F5> :w<CR>:!ruby %<CR>
+    autocmd FileType ruby imap <buffer> <F5> <Esc>:w<CR>:!ruby %<CR>
+    autocmd FileType ruby map <buffer> <S-F5> :w<Esc>:!irb %<CR>
+    autocmd FileType ruby imap <buffer> <S-F5> <Esc>:w<CR>:!irb %<CR>
 
     " Ctrl+l for hashrocket
-    autocmd filetype ruby imap <C-l> <Space>=><Space>
+    autocmd FileType ruby imap <C-l> <Space>=><Space>
   augroup end " }}}
 
   augroup rst_files "{{{
     au!
 
     " Auto-wrap text around 74 chars
-    autocmd filetype rst setlocal textwidth=74
-    autocmd filetype rst setlocal formatoptions+=nqt
-    autocmd filetype rst match ErrorMsg '\%>74v.\+'
+    autocmd FileType rst setlocal textwidth=74
+    autocmd FileType rst setlocal formatoptions+=nqt
+    autocmd FileType rst match ErrorMsg '\%>74v.\+'
   augroup end " }}}
 
   augroup css_files "{{{
     au!
 
-    autocmd filetype css,less setlocal foldmethod=marker foldmarker={,}
+    autocmd FileType css,less setlocal foldmethod=marker foldmarker={,}
   augroup end "}}}
 
   augroup javascript_files "{{{
     au!
 
-    autocmd filetype javascript setlocal expandtab
-    autocmd filetype javascript setlocal listchars=trail:·,extends:#,nbsp:·
-    autocmd filetype javascript setlocal foldmethod=marker foldmarker={,}
+    autocmd FileType javascript setlocal expandtab
+    autocmd FileType javascript setlocal listchars=trail:·,extends:#,nbsp:·
+    autocmd FileType javascript setlocal foldmethod=marker foldmarker={,}
   augroup end "}}}
 
   augroup textile_files "{{{
     au!
 
-    autocmd filetype textile set tw=78 wrap
+    autocmd FileType textile set tw=78 wrap
 
     " Render YAML front matter inside Textile documents as comments
-    autocmd filetype textile syntax region frontmatter start=/\%^---$/ end=/^---$/
-    autocmd filetype textile highlight link frontmatter Comment
+    autocmd FileType textile syntax region frontmatter start=/\%^---$/ end=/^---$/
+    autocmd FileType textile highlight link frontmatter Comment
   augroup end "}}}
 endif
 " }}}
@@ -579,8 +579,8 @@ source ~/.vim/autocorrect.vim
 set cpoptions+=$     " when changing a line, don't redisplay, but put a '$' at
                      " the end during the change
 set formatoptions-=o " don't start new lines w/ comment leader on pressing 'o'
-au filetype vim set formatoptions-=o
-                     " somehow, during vim filetype detection, this gets set
+au FileType vim set formatoptions-=o
+                     " somehow, during vim FileType detection, this gets set
                      " for vim files, so explicitly unset it again
 " }}}
 
