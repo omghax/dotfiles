@@ -599,6 +599,7 @@ iab lllorem Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Etiam lacu
 
 if has("gui_running")
   set guifont=Inconsolata:h14
+  set background=light
   "colorscheme baycomb
   "colorscheme mustang
   "colorscheme molokai
@@ -624,7 +625,7 @@ if has("gui_running")
   endfunction
   command! -bang -nargs=0 ScreenRecordMode call ScreenRecordMode()
 else
-  set bg=dark
+  set bg=light
   let g:solarized_termcolors=256
   colorscheme solarized
 endif
