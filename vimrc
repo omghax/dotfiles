@@ -130,12 +130,12 @@ set history=1000                " remember more commands and search history
 set undolevels=1000             " use many muchos levels of undo
 if v:version >= 730
   set undofile                  " keep a persistent undo file
-  " set undodir=~/.vim/tmp/undo,~/tmp,/tmp
+  set undodir=~/.vim/tmp/undo//,~/tmp//,/tmp//
 endif
 set nobackup                    " no backup files; it's 70's style cluttering
 set noswapfile                  " do not write annoying intermediate swap files,
                                 "   who did ever restore from swap files anyway?
-set directory=~/.vim/tmp,~/tmp,/tmp
+set directory=~/.vim/tmp//,~/tmp//,/tmp//
                                 " store swap files in one of these directories
                                 "   (in case swapfile is ever turned on)
 set viminfo='20,\"80            " read/write a .viminfo file, don't store more
