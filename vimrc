@@ -128,7 +128,7 @@ set switchbuf=useopen           " reveal already opened files from the quickfix
                                 "   window instead of opening new buffers
 set history=1000                " remember more commands and search history
 set undolevels=1000             " use many muchos levels of undo
-if v:version >= 730
+if exists("&undofile")
   set undofile                  " keep a persistent undo file
   set undodir=~/.vim/tmp/undo//,~/tmp//,/tmp//
 endif
