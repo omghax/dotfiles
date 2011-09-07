@@ -141,7 +141,6 @@ vim_plugin_task 'pathogen.vim' do
 end
 
 vim_plugin_task 'ack.vim',        'git://github.com/mileszs/ack.vim.git'
-vim_plugin_task 'autoclose',      'git://github.com/Townk/vim-autoclose.git'
 vim_plugin_task 'bufexplorer',    'git://github.com/slack/vim-bufexplorer.git'
 vim_plugin_task 'coffeescript',   'git://github.com/kchmck/vim-coffee-script.git'
 vim_plugin_task 'color-sampler',  'git://github.com/vim-scripts/Color-Sampler-Pack.git'

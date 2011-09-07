@@ -398,11 +398,6 @@ let Tlist_Display_Tag_Scope=0
 let Tlist_Use_Right_Window=1
 " }}}
 
-" AutoClose settings {{{
-let g:AutoClosePairs = {'(': ')', '{': '}', '[': ']', '"': '"', "'": "'", '#{': '}', '|':'|'}
-let g:AutoCloseProtectedRegions = ["Character"]
-" }}}
-
 " Conflict markers {{{
 " highlight conflict markers
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
