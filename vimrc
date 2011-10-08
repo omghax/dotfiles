@@ -300,8 +300,8 @@ nnoremap gV `[V`]
 nnoremap <leader>bd :bufdo bd<CR>
 
 " Sorting
-nnoremap <leader>ss :sort<CR>
-nnoremap <leader>su :sort u<CR>
+noremap <leader>ss :sort<CR>
+noremap <leader>su :sort u<CR>
 
 " Tags
 nnoremap <leader>rt :!ctags --extra=+f -R *<CR><CR>
