@@ -580,8 +580,6 @@ source ~/.vim/autocorrect.vim
 
 " Extra vi-compatibility {{{
 " set extra vi-compatible options
-set cpoptions+=$     " when changing a line, don't redisplay, but put a '$' at
-                     " the end during the change
 set formatoptions-=o " don't start new lines w/ comment leader on pressing 'o'
 au FileType vim set formatoptions-=o
                      " somehow, during vim FileType detection, this gets set
