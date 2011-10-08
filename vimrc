@@ -310,12 +310,16 @@ map <C-\> :tnext<CR>
 " Tabular
 vnoremap <leader>a :Tabularize /
 onoremap <leader>a :Tabularize /
+nnoremap <leader>a :Tabularize /
 vnoremap <leader>a= :Tabularize /=<CR>
 onoremap <leader>a= :Tabularize /=<CR>
+nnoremap <leader>a= :Tabularize /=<CR>
 vnoremap <leader>a: :Tabularize /:\zs<CR>
 onoremap <leader>a: :Tabularize /:\zs<CR>
+nnoremap <leader>a: :Tabularize /:\zs<CR>
 vnoremap <leader>a> :Tabularize /=><CR>
 onoremap <leader>a> :Tabularize /=><CR>
+nnoremap <leader>a> :Tabularize /=><CR>
 vnoremap <leader>a, :Tabularize /,\zs<CR>
 onoremap <leader>a, :Tabularize /,\zs<CR>
 nnoremap <leader>a, :Tabularize /,\zs<CR>
