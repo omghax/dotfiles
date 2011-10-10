@@ -273,9 +273,9 @@ nmap <leader>z :%s#\<<C-r>=expand("<cword>")<CR>\>#
 cmap w!! w !sudo tee % >/dev/null
 
 " Jump to matching pairs easily, with Tab
-onoremap <Tab> %
-nnoremap <Tab> %
-vnoremap <Tab> %
+omap <Tab> %
+nmap <Tab> %
+vmap <Tab> %
 
 " Folding
 nnoremap <Space> za
