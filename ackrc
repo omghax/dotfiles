@@ -35,6 +35,9 @@
 # and handlebars
 --type-set=handlebars=.handlebars
 
+# and coffeescript
+--type-set=coffeescript=.coffee
+
 # ignore directories for Rails projects
 --ignore-dir=log
 --ignore-dir=tmp
