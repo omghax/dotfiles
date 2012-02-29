@@ -109,6 +109,7 @@ set laststatus=2                " tell vim to always put a status line in, even 
                                 "   there is only one window
 set cmdheight=1                 " use a status bar that is 1 row high
 set ruler                       " show the cursor position all the time
+set cursorline                  " highlight the current line
 
 if exists("&colorcolumn")
   set colorcolumn=85            " colored column line at 85 characters
