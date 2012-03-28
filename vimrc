@@ -603,14 +603,19 @@ iab lllorem Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Etiam lacu
 if has("gui_running")
   set guifont=Inconsolata:h14
   set background=light
+  "colorscheme autumnleaf
   "colorscheme baycomb
-  "colorscheme mustang
   "colorscheme molokai
-  let g:solarized_termcolors=256
-  let g:solarized_bold = 1
-  let g:solarized_underline = 1
-  let g:solarized_italic = 1
-  colorscheme solarized
+  "colorscheme mustang
+  colorscheme railscasts2
+  "colorscheme twilight
+
+  " Uncomment the following to use Solarized.
+  " let g:solarized_termcolors=256
+  " let g:solarized_bold = 1
+  " let g:solarized_underline = 1
+  " let g:solarized_italic = 1
+  " colorscheme solarized
 
   " Remove toolbar, left scrollbar and right scrollbar
   set guioptions-=T
