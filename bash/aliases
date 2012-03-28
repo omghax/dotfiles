@@ -38,3 +38,6 @@ alias be='bundle exec'
 
 # commands starting with % for pasting from web
 alias %=' '
+
+# Use MacVim's bundled vim instead of the (slow) one that ships with OS X.
+alias vim="/Applications/MacVim.app/Contents/MacOS/Vim"
