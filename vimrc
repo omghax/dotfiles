@@ -628,7 +628,5 @@ if has("gui_running")
   endfunction
   command! -bang -nargs=0 ScreenRecordMode call ScreenRecordMode()
 else
-  set bg=light
-  let g:solarized_termcolors=256
-  colorscheme solarized
+  colorscheme wombat256
 endif
