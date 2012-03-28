@@ -297,6 +297,10 @@ noremap <leader>su :sort u<CR>
 nnoremap <leader>rt :!ctags --extra=+f -R *<CR><CR>
 map <C-\> :tnext<CR>
 
+" Open files in directory of current file
+cnoremap %% <C-R>=expand('%:h').'/'<CR>
+map <leader>e :edit %%
+
 " Tabular
 vnoremap <leader>a :Tabularize /
 onoremap <leader>a :Tabularize /
