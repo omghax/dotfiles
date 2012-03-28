@@ -148,9 +148,6 @@ set showcmd                     " show (partial) command in the last line of the
 set nomodeline                  " disable mode lines (security measure)
 set ttyfast                     " always use a fast terminal
 
-" Tame the quickfix window (open/close using ,f)
-nmap <silent> <leader>f :QFix<CR>
-
 command! -bang -nargs=? QFix call QFixToggle(<bang>0)
 function! QFixToggle(forced)
   if exists("g:qfix_win") && a:forced == 0
@@ -320,12 +317,19 @@ vnoremap <leader>a, :Tabularize /,\zs<CR>
 onoremap <leader>a, :Tabularize /,\zs<CR>
 nnoremap <leader>a, :Tabularize /,\zs<CR>
 
+" Quick open config/routes.rb into a split
+map <leader>gr :topleft :split config/routes.rb<CR>
+
 " CommandT
-function! CommandTFlushAndReload()
-  :CommandTFlush
-  :CommandT
-endfunction
-nnoremap <leader>T :exec CommandTFlushAndReload()<CR>
+map <leader>gv :CommandTFlush<CR>\|:CommandT app/views<CR>
+map <leader>gc :CommandTFlush<CR>\|:CommandT app/controllers<CR>
+map <leader>gm :CommandTFlush<CR>\|:CommandT app/models<CR>
+map <leader>gh :CommandTFlush<CR>\|:CommandT app/helpers<CR>
+map <leader>gl :CommandTFlush<CR>\|:CommandT lib<CR>
+map <leader>gs :CommandTFlush<CR>\|:CommandT spec<CR>
+map <leader>gt :CommandTFlush<CR>\|:CommandTTag<CR>
+map <leader>f :CommandTFlush<CR>\|:CommandT<CR>
+map <leader>F :CommandTFlush<CR>\|:CommandT %%<CR>
 
 " BufExplorer
 nnoremap <F4> :BufExplorer<CR>
