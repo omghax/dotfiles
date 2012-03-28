@@ -247,9 +247,6 @@ nmap <leader>P "+P
 let g:yankring_history_dir = '$HOME/.vim/tmp'
 nmap <leader>r :YRShow<CR>
 
-" Edit the vimrc file
-nmap <silent> <leader>ev :e $MYVIMRC<CR>
-
 " Clears the search register
 nmap <silent> <leader>/ :nohlsearch<CR>
 
