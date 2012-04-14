@@ -170,6 +170,14 @@ if &t_Co > 2 || has("gui_running")
 endif
 " }}}
 
+" Tags {{{
+" Include tags for RVM gems.
+set tags+=,$HOME/.rvm/gems/tags
+
+" Ctrl+\ to jump to the next matching tag.
+map <C-\> :tnext<CR>
+" }}}
+
 " Shortcut mappings {{{
 " Since I never use the ; key anyway, this is a real optimization for almost
 " all vim commands, since we don't have to press that annoying Shift key that
@@ -292,10 +300,6 @@ nnoremap <leader>bd :bufdo bd<CR>
 " Sorting
 noremap <leader>ss :sort<CR>
 noremap <leader>su :sort u<CR>
-
-" Tags
-nnoremap <leader>rt :!ctags --extra=+f -R *<CR><CR>
-map <C-\> :tnext<CR>
 
 " Open files in directory of current file
 cnoremap %% <C-R>=expand('%:h').'/'<CR>
