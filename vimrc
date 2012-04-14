@@ -251,10 +251,6 @@ nmap <leader>Y "+yy
 nmap <leader>p "+p
 nmap <leader>P "+P
 
-" YankRing stuff
-let g:yankring_history_dir = '$HOME/.vim/tmp'
-nmap <leader>r :YRShow<CR>
-
 " Clears the search register
 nmap <silent> <leader>/ :nohlsearch<CR>
 
