@@ -335,10 +335,6 @@ map <leader>F :CommandTFlush<CR>\|:CommandT %%<CR>
 " BufExplorer
 nnoremap <F4> :BufExplorer<CR>
 
-" Gundo.vim
-nnoremap <F5> :GundoToggle<CR>
-" }}}
-
 " NERDTree settings {{{
 " Put focus to the NERD Tree with F3 (tricked by quickly closing it and
 " immediately showing it again, since there is no :NERDTreeFocus command)

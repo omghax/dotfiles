@@ -13,9 +13,6 @@ if has("gui_macvim")
   macmenu Window.Toggle\ Full\ Screen\ Mode key=<nop>
   map <D-F> :Ack<Space>
 
-  " Command-e for ConqueTerm
-  map <D-e> :call StartTerm()<CR>
-
   " Command-/ to toggle comments
   map <D-/> <Plug>NERDCommenterToggle<CR>
 
@@ -34,12 +31,6 @@ set guioptions-=R
 
 " Use better fonts, if available
 set guifont=Inconsolata:h14,AnonymousPro:h14,Andale\ Mono\ 14,DejaVu\ Sans\ Mono\ 14,Terminal
-
-" ConqueTerm wrapper
-function! StartTerm()
-  execute 'ConqueTerm ' . $SHELL . ' --login'
-  setlocal listchars=tab:\ \
-endfunction
 
 " Project Tree
 "autocmd VimEnter * NERDTree

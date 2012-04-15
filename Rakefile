@@ -144,10 +144,8 @@ vim_plugin_task 'ack.vim',        'git://github.com/mileszs/ack.vim.git'
 vim_plugin_task 'bufexplorer',    'git://github.com/slack/vim-bufexplorer.git'
 vim_plugin_task 'coffeescript',   'git://github.com/kchmck/vim-coffee-script.git'
 vim_plugin_task 'color-sampler',  'git://github.com/vim-scripts/Color-Sampler-Pack.git'
-vim_plugin_task 'conque',         'http://conque.googlecode.com/files/conque_2.0.tar.gz'
 vim_plugin_task 'endwise',        'git://github.com/tpope/vim-endwise.git'
 vim_plugin_task 'fugitive',       'git://github.com/tpope/vim-fugitive.git'
-vim_plugin_task 'gist-vim',       'git://github.com/mattn/gist-vim.git'
 vim_plugin_task 'git',            'git://github.com/tpope/vim-git.git'
 vim_plugin_task 'haml',           'git://github.com/tpope/vim-haml.git'
 vim_plugin_task 'indent-object',  'git://github.com/michaeljsmith/vim-indent-object.git'
@@ -159,24 +157,14 @@ vim_plugin_task 'nerdcommenter',  'git://github.com/ddollar/nerdcommenter.git'
 vim_plugin_task 'nerdtree',       'git://github.com/wycats/nerdtree.git'
 vim_plugin_task 'ragel',          'git://github.com/jayferd/ragel.vim.git'
 vim_plugin_task 'rails',          'git://github.com/tpope/vim-rails.git'
-vim_plugin_task 'rainbow',        'git://github.com/chrismetcalf/vim-rainbow.git'
 vim_plugin_task 'rspec',          'git://github.com/taq/vim-rspec.git'
 vim_plugin_task 'ruby',           'git://github.com/vim-ruby/vim-ruby.git'
-vim_plugin_task 'snipmate',       'git://github.com/msanders/snipmate.vim.git'
 vim_plugin_task 'solarized',      'git://github.com/altercation/vim-colors-solarized.git'
 vim_plugin_task 'supertab',       'git://github.com/ervandew/supertab.git'
 vim_plugin_task 'surround',       'git://github.com/tpope/vim-surround.git'
 vim_plugin_task 'tabular',        'git://github.com/godlygeek/tabular.git'
-vim_plugin_task 'tagbar',         'git://github.com/majutsushi/tagbar.git'
 vim_plugin_task 'unimpaired',     'git://github.com/tpope/vim-unimpaired.git'
-vim_plugin_task 'yankring',       'http://www.vim.org/scripts/download_script.php?src_id=13554'
 vim_plugin_task 'zencoding',      'git://github.com/mattn/zencoding-vim.git'
-
-vim_plugin_task 'gundo', 'git://github.com/sjl/gundo.vim.git' do
-  # For whatever reason, the gundo repo includes symbolic links to the author's
-  # home directory. These wreak havoc when updating, so we remove them here.
-  sh "find . -type 'l' | xargs rm"
-end
 
 vim_plugin_task 'command-t', 'git://github.com/wincent/Command-T.git' do
   sh "find ruby -name '.gitignore' | xargs rm"
