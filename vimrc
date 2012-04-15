@@ -301,7 +301,21 @@ noremap <leader>su :sort u<CR>
 cnoremap %% <C-R>=expand('%:h').'/'<CR>
 map <leader>e :edit %%
 
-" Tabular
+" Quick open config/routes.rb into a split
+map <leader>gr :topleft :split config/routes.rb<CR>
+
+" BufExplorer
+nnoremap <F4> :BufExplorer<CR>
+" }}}
+
+" Unimpaired {{{
+nmap <C-up> [e
+nmap <C-down> ]e
+vmap <C-up> [egv
+vmap <C-down> ]egv
+" }}}
+
+" Tabular {{{
 vnoremap <leader>a :Tabularize /
 onoremap <leader>a :Tabularize /
 nnoremap <leader>a :Tabularize /
@@ -317,11 +331,9 @@ nnoremap <leader>a> :Tabularize /=><CR>
 vnoremap <leader>a, :Tabularize /,\zs<CR>
 onoremap <leader>a, :Tabularize /,\zs<CR>
 nnoremap <leader>a, :Tabularize /,\zs<CR>
+" }}}
 
-" Quick open config/routes.rb into a split
-map <leader>gr :topleft :split config/routes.rb<CR>
-
-" CommandT
+" CommandT {{{
 map <leader>gv :CommandTFlush<CR>\|:CommandT app/views<CR>
 map <leader>gc :CommandTFlush<CR>\|:CommandT app/controllers<CR>
 map <leader>gm :CommandTFlush<CR>\|:CommandT app/models<CR>
@@ -331,9 +343,7 @@ map <leader>gs :CommandTFlush<CR>\|:CommandT spec<CR>
 map <leader>gt :CommandTFlush<CR>\|:CommandTTag<CR>
 map <leader>f :CommandTFlush<CR>\|:CommandT<CR>
 map <leader>F :CommandTFlush<CR>\|:CommandT %%<CR>
-
-" BufExplorer
-nnoremap <F4> :BufExplorer<CR>
+" }}}
 
 " NERDTree settings {{{
 " Put focus to the NERD Tree with F3 (tricked by quickly closing it and
