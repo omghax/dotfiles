@@ -6,7 +6,9 @@
 *~
 .*.swp
 .DS_Store
+.bundle
 .svn
 .yardoc
 a.out
+bin
 tags
