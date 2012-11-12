@@ -501,8 +501,8 @@ if has("autocmd")
   augroup ruby_files "{{{
     au!
 
-    " Buildfile, Gemfile, Rakefile, Thorfile, and config.ru are all Ruby
-    autocmd BufRead,BufNewFile {Buildfile,Gemfile,Rakefile,Thorfile,config.ru} set ft=ruby
+    " Build-, Gem-, Rake-, Thor-, AssetFile and config.ru are all Ruby
+    autocmd BufRead,BufNewFile {Assetfile,Buildfile,Gemfile,Rakefile,Thorfile,config.ru} set ft=ruby
 
     autocmd FileType ruby setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
 
