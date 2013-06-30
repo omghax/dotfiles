@@ -21,8 +21,8 @@
 
 #### TYPES
 
-# consider .rake files as ruby
---type-add=ruby=.rake,.ru
+# these are all ruby
+--type-add=ruby=.rake,.ru,.gemspec,Assetfile,Gemfile,Rakefile
 
 # introduce haml to ack
 --type-add=ruby=.haml
