@@ -7,6 +7,7 @@
 .*.swp
 .DS_Store
 .bundle
+.ruby-gemset
 .svn
 .yardoc
 a.out
