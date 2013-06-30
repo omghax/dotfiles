@@ -47,7 +47,8 @@ set smartcase                   " ignore case if search pattern is all lowercase
                                 "   case-sensitive otherwise
 set smarttab                    " insert tabs on the start of a line according to
                                 "   shiftwidth, not tabstop
-set scrolloff=4                 " keep 4 lines off the edges of the screen when scrolling
+set scrolloff=0                 " don't scroll until you hit the top/bottom of the screen
+set scrolljump=5                " reduce redraws by scrolling 5 lines at a time
 set virtualedit=all             " allow the cursor to go to 'invalid' places
 set hlsearch                    " highlight search terms
 set incsearch                   " show search matches as you type
@@ -109,7 +110,8 @@ set laststatus=2                " tell vim to always put a status line in, even 
                                 "   there is only one window
 set cmdheight=1                 " use a status bar that is 1 row high
 set ruler                       " show the cursor position all the time
-set cursorline                  " highlight the current line
+set nocursorline                " disable highlighting the current line for performance
+set nocursorcolumn              " ditto the current column
 
 if exists("&colorcolumn")
   set colorcolumn=85            " colored column line at 85 characters
@@ -167,6 +169,7 @@ endif
 
 if &t_Co > 2 || has("gui_running")
   syntax on                     " syntax highlighting on if the terminal is color
+  syntax sync minlines=256
 endif
 " }}}
 
