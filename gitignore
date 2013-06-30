@@ -12,4 +12,5 @@
 .yardoc
 a.out
 bin
+node_modules
 tags
