@@ -39,6 +39,7 @@
 --type-set=coffeescript=.coffee
 
 # ignore directories for Rails projects
+--ignore-dir=doc
 --ignore-dir=log
 --ignore-dir=tmp
 --ignore-dir=vendor
