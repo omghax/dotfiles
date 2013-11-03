@@ -22,7 +22,7 @@ set nocompatible
 " the ~/.vim/bundle directory.
 filetype off " force reloading *after* pathogen is loaded
 call pathogen#helptags()
-call pathogen#runtime_append_all_bundles()
+call pathogen#incubate()
 filetype plugin indent on " enable detection, plugins, and indenting in one step
 
 " Change the mapleader from \ to ,
