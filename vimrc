@@ -336,16 +336,9 @@ onoremap <leader>a, :Tabularize /,\zs<CR>
 nnoremap <leader>a, :Tabularize /,\zs<CR>
 " }}}
 
-" CommandT {{{
-map <leader>gv :CommandTFlush<CR>\|:CommandT app/views<CR>
-map <leader>gc :CommandTFlush<CR>\|:CommandT app/controllers<CR>
-map <leader>gm :CommandTFlush<CR>\|:CommandT app/models<CR>
-map <leader>gh :CommandTFlush<CR>\|:CommandT app/helpers<CR>
-map <leader>gl :CommandTFlush<CR>\|:CommandT lib<CR>
-map <leader>gs :CommandTFlush<CR>\|:CommandT spec<CR>
-map <leader>gt :CommandTFlush<CR>\|:CommandTTag<CR>
-map <leader>f :CommandTFlush<CR>\|:CommandT<CR>
-map <leader>F :CommandTFlush<CR>\|:CommandT %%<CR>
+" CtrlP {{{
+let g:ctrlp_map = "<leader>f"
+let g:ctrlp_cmd = "CtrlP"
 " }}}
 
 " NERDTree settings {{{

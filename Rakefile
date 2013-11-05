@@ -144,6 +144,7 @@ vim_plugin_task 'ack.vim',        'git://github.com/mileszs/ack.vim.git'
 vim_plugin_task 'bufexplorer',    'git://github.com/slack/vim-bufexplorer.git'
 vim_plugin_task 'coffeescript',   'git://github.com/kchmck/vim-coffee-script.git'
 vim_plugin_task 'color-sampler',  'git://github.com/vim-scripts/Colour-Sampler-Pack.git'
+vim_plugin_task 'ctrlp',          'git://github.com/kien/ctrlp.vim.git'
 vim_plugin_task 'endwise',        'git://github.com/tpope/vim-endwise.git'
 vim_plugin_task 'fugitive',       'git://github.com/tpope/vim-fugitive.git'
 vim_plugin_task 'git',            'git://github.com/tpope/vim-git.git'
@@ -164,17 +165,3 @@ vim_plugin_task 'surround',       'git://github.com/tpope/vim-surround.git'
 vim_plugin_task 'tabular',        'git://github.com/godlygeek/tabular.git'
 vim_plugin_task 'unimpaired',     'git://github.com/tpope/vim-unimpaired.git'
 vim_plugin_task 'zencoding',      'git://github.com/mattn/zencoding-vim.git'
-
-vim_plugin_task 'command-t', 'git://github.com/wincent/Command-T.git' do
-  sh "find ruby -name '.gitignore' | xargs rm"
-  Dir.chdir('ruby/command-t') do
-    if File.exists?('/usr/bin/ruby1.8') # prefer 1.8 on *.deb systems
-      sh '/usr/bin/ruby1.8 extconf.rb'
-    elsif File.exists?('/usr/bin/ruby') # prefer system rubies
-      sh '/usr/bin/ruby extconf.rb'
-    elsif `rvm > /dev/null 2>&1` && $?.exitstatus == 0
-      sh 'rvm system ruby extconf.rb'
-    end
-    sh 'make clean && make'
-  end
-end
