@@ -38,6 +38,11 @@
 # and coffeescript
 --type-set=coffeescript=.coffee
 
+# ignore directories for Bower / Node projects
+--ignore-dir=bower_components
+--ignore-dir=dist
+--ignore-dir=node_modules
+
 # ignore directories for Rails projects
 --ignore-dir=doc
 --ignore-dir=log
