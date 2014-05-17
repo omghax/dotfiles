@@ -141,7 +141,7 @@ set viminfo='20,\"80            " read/write a .viminfo file, don't store more
                                 "   than 80 lines of registers
 set wildmenu                    " make file/buffer tab completion act like bash
 set wildmode=list:full          " show a list when pressing tab and complete first full match
-set wildignore=*.o,*.obj,*.swp,*.bak,*.pyc,*.rbc,*.class,coverage/**,tmp/**
+set wildignore=*.o,*.obj,*.swp,*.bak,*.pyc,*.rbc,*.class,*/coverage/**,*/node_modules/**,*/tmp/**
 set title                       " change the terminal's title
 set visualbell                  " don't beep
 set noerrorbells                " no really, don't beep
