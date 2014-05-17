@@ -525,6 +525,9 @@ if has("autocmd")
   augroup javascript_files "{{{
     au!
 
+    " *.es6 files are JavaScript
+    autocmd BufRead,BufNewFile *.es6 set ft=javascript
+
     autocmd FileType javascript setlocal expandtab
     autocmd FileType javascript setlocal listchars=trail:·,extends:#,nbsp:·
     autocmd FileType javascript setlocal foldmethod=marker foldmarker={,}
