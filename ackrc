@@ -49,6 +49,9 @@
 --ignore-dir=tmp
 --ignore-dir=vendor
 
+# ignore simplecov coverage reports
+--ignore-dir=coverage
+
 # add markdown and textile
 --type-set=plaintext=.md,.mdown,.markdown,.mkdn,.textile
 
