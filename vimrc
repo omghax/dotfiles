@@ -531,6 +531,7 @@ if has("autocmd")
     autocmd FileType javascript setlocal expandtab
     autocmd FileType javascript setlocal listchars=trail:·,extends:#,nbsp:·
     autocmd FileType javascript setlocal foldmethod=marker foldmarker={,}
+    autocmd FileType javascript normal zR
   augroup end "}}}
 
   augroup textile_files "{{{
