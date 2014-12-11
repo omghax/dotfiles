@@ -43,6 +43,9 @@
 --ignore-dir=dist
 --ignore-dir=node_modules
 
+# ignore directories for Sass projects
+--ignore-dir=.sass-cache
+
 # ignore directories for Rails projects
 --ignore-dir=doc
 --ignore-dir=log
