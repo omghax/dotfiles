@@ -339,6 +339,7 @@ nnoremap <leader>a, :Tabularize /,\zs<CR>
 " CtrlP {{{
 let g:ctrlp_map = "<leader>f"
 let g:ctrlp_cmd = "CtrlP"
+let g:ctrlp_match_func = {"match": "matcher#cmatch"}
 " }}}
 
 " NERDTree settings {{{
