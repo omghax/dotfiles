@@ -339,7 +339,24 @@ nnoremap <leader>a, :Tabularize /,\zs<CR>
 " CtrlP {{{
 let g:ctrlp_map = "<leader>f"
 let g:ctrlp_cmd = "CtrlP"
+
+" Use ctrlp-cmatcher, to speed up fuzzy filename matching.
 let g:ctrlp_match_func = {"match": "matcher#cmatch"}
+
+" Set delay to prevent extra search.
+let g:ctrlp_lazy_update = 100
+
+" Do not clear filename cache, to improve CtrlP startup.
+" You can manually clear it with <F5>.
+let g:ctrlp_clear_cache_on_exit = 0
+
+" Set no file limit.
+let g:ctrlp_max_files = 0
+
+" If ag is available, use it as the filename list generator instead of 'find'.
+if executable("ag")
+  let g:ctrlp_user_command = "ag %s -i --nocolor --nogroup --ignore '.git' --ignore '.DS_Store' --ignore 'bower_components' --ignore 'node_modules' --hidden -g ''"
+endif
 " }}}
 
 " NERDTree settings {{{
