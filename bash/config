@@ -23,3 +23,6 @@ export LSCOLORS='Bxgxfxfxcxdxdxhbadbxbx'
 
 # Hubot
 export REDISTOGO_URL=redis://redistogo:727c2a7dbe0c4cfadfc270ea4cdbdd06@perch.redistogo.com:9042/
+
+# Editor
+export EDITOR=vim
