@@ -547,6 +547,10 @@ if has("autocmd")
 endif
 " }}}
 
+" JSHint {{{
+let g:jshint2_save=1 " run jshint on save
+" }}}
+
 " Restore cursor position upon reopening files {{{
 autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 " }}}
