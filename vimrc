@@ -149,7 +149,7 @@ autocmd BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,config.ru,*_spec\.rb} s
 autocmd BufRead,BufNewFile *.md set ft=markdown
 autocmd Filetype html setlocal ts=2 sts=2 sw=2
 autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
-autocmd Filetype javascript setlocal ts=4 sts=4 sw=4
+autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
 
 " Enable spellcheck for Markdown
 autocmd Filetype markdown setlocal spell
