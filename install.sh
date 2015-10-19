@@ -195,9 +195,31 @@ bundle config --global jobs $((number_of_cores - 1))
 
 brew_install_or_upgrade "node"
 
+npm_is_installed() {
+  npm list --depth 1 -g "$1" >/dev/null 2>&1
+}
+
+npm_is_updatable() {
+  ! npm outdated -g "$1" >/dev/null 2>&1
+}
+
+npm_install_or_update() {
+  if npm_is_installed "$1"; then
+    step "Updating '$1'"
+    if npm_is_updatable "$1"; then
+      npm update -g "$@"
+    else
+      echo "Already using the latest version of '$1'"
+    fi
+  else
+    step "Installing '$1'"
+    npm install -g "$@"
+  fi
+}
+
 step "Installing global npm packages"
-npm install -g bower
-npm install -g ember-cli
+npm_install_or_update "bower"
+npm_install_or_update "ember-cli"
 
 # *** ImageMagick
 
