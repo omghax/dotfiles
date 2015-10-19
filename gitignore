@@ -1,0 +1,13 @@
+!tags/
+!tmp/cache/.keep
+*.sw[nop]
+*~
+.DS_Store
+.bundle
+.env
+.sass-cache
+db/*.sqlite3
+log
+tags
+tmp
+tmp/**/*

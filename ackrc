@@ -1,0 +1,17 @@
+--no-css
+
+# Group the results by file
+--group
+
+# Only show one line of output context around the results
+--context=1
+
+# Follow symlinks
+--follow
+
+--color
+
+--ignore-dir=gems
+--ignore-dir=log
+--ignore-dir=tmp
+--ignore-dir=vendor

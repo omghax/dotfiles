@@ -1,0 +1,23 @@
+[alias]
+	amend = commit --amend
+	br = branch
+	brm = branch --merged
+	c = commit
+	d = diff
+	dc = diff --cached
+	ff = merge
+	p = push
+	rb = rebase
+	rba = rebase --abort
+	rbc = rebase --continue
+	rbi = rebase --interactive
+	rbs = rebase --skip
+	rh = reset
+	st = status
+[color]
+	branch = auto
+	diff = auto
+	grep = auto
+	status = auto
+[core]
+	excludesfile = ~/.gitignore
