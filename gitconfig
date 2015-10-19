@@ -3,6 +3,7 @@
 	br = branch
 	brm = branch --merged
 	c = commit
+	co = checkout
 	d = diff
 	dc = diff --cached
 	ff = merge
