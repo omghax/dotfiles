@@ -12,7 +12,7 @@
 	rbc = rebase --continue
 	rbi = rebase --interactive
 	rbs = rebase --skip
-	rh = reset
+	rh = reset --hard
 	st = status
 [color]
 	branch = auto
