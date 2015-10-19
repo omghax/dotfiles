@@ -21,3 +21,5 @@
 	status = auto
 [core]
 	excludesfile = ~/.gitignore
+[push]
+	default = simple
