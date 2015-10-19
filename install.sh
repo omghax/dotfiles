@@ -102,6 +102,8 @@ maybe_link "$dotfiles/gitignore" "$HOME/.gitignore"
 
 # *** Bash
 
+brew_install_or_upgrade "bash-completion"
+
 maybe_link "$dotfiles/bash" "$HOME/.bash"
 maybe_link "$dotfiles/bash_profile" "$HOME/.bash_profile"
 maybe_link "$dotfiles/bashrc" "$HOME/.bashrc"
