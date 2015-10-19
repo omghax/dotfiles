@@ -198,3 +198,7 @@ brew_install_or_upgrade "node"
 step "Installing global npm packages"
 npm install -g bower
 npm install -g ember-cli
+
+# *** ImageMagick
+
+brew_install_or_upgrade "imagemagick"
