@@ -192,3 +192,7 @@ bundle config --global jobs $((number_of_cores - 1))
 # *** NodeJS
 
 brew_install_or_upgrade "node"
+
+step "Installing global npm packages"
+npm install -g bower
+npm install -g ember-cli
