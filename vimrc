@@ -199,6 +199,9 @@ vnoremap . :norm.<cr>
 vnoremap < <gv
 vnoremap > >gv
 
+" Pull word under cursor into find / replace
+nmap <leader>z :%s#\<<C-r>=expand("<cword>")<cr>\>#
+
 " *** Plugins
 
 " vim-ruby
