@@ -81,7 +81,9 @@ set noerrorbells                      " No error bells, please
 set mouse=a
 
 " Make it obvious where 80 characters is
-set colorcolumn=81
+if exists("+colorcolumn")
+  set colorcolumn=81
+endif
 
 " Always show status line
 set laststatus=2
