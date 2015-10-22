@@ -33,7 +33,7 @@ set tabstop=2                         " For proper display of files with tabs
 set shiftround                        " Always round indents to multiples of shiftwidth
 set copyindent                        " Use existing indents for new indents
 set preserveindent                    " Save as much indent structure as possible
-set virtualedit=onemore
+set virtualedit=all                   " Allow the cursor to go to 'invalid' places
 
 set scrolloff=5                       " Keep at least 5 lines above / below
 set sidescrolloff=5                   " Keep at least 5 lines left / right
