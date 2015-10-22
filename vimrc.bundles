@@ -28,6 +28,7 @@ Bundle 'trusktr/seti.vim'
 " Languages
 Bundle 'leshill/vim-json'
 Bundle 'mattn/emmet-vim'
+Bundle 'mustache/vim-mustache-handlebars'
 Bundle 'pangloss/vim-javascript'
 Bundle 'skalnik/vim-vroom'
 Bundle 'thoughtbot/vim-rspec'
