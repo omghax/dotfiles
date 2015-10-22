@@ -145,22 +145,42 @@ endif
 
 " *** Filetype
 
-" Set syntax highlighting for specific file types
-autocmd BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,config.ru,*_spec\.rb} set ft=ruby
-autocmd BufRead,BufNewFile *.md set ft=markdown
-autocmd Filetype html setlocal ts=2 sts=2 sw=2
-autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
-autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
+augroup tab_settings
+  autocmd!
 
-" Enable spellcheck for Markdown
-autocmd Filetype markdown setlocal spell
+  " Soft tabs, 2 spaces
+  autocmd FileType html setlocal ts=2 sts=2 sw=2
+  autocmd FileType javascript setlocal ts=2 sts=2 sw=2
+  autocmd FileType ruby setlocal ts=2 sts=2 sw=2
+augroup END
 
-" Automatically wrap at 80 characters for Markdown
-autocmd BufRead,BufNewFile *.md setlocal textwidth=80
+augroup filetype_gitcommit
+  autocmd!
 
-" Automatically wrap at 72 characters and spellcheck git commit messages
-autocmd Filetype gitcommit setlocal textwidth=72
-autocmd Filetype gitcommit setlocal spell
+  " Wrap lines at 72 characters
+  autocmd FileType gitcommit setlocal textwidth=72
+  " Enable spell checking
+  autocmd FileType gitcommit setlocal spell
+augroup END
+
+augroup filetype_markdown
+  autocmd!
+
+  autocmd BufRead,BufNewFile *.md set ft=markdown
+  " Wrap lines at 80 characters
+  autocmd FileType markdown setlocal textwidth=80
+  " Enable spell checking
+  autocmd FileType markdown setlocal spell
+augroup END
+
+augroup filetype_ruby
+  autocmd!
+
+  " These files are also Ruby
+  autocmd BufRead,BufNewFile {Gemfile,Rakefile,Thorfile,Vagrantfile,config.ru} set ft=ruby
+  " Ctrl-l to insert a hashrocket
+  autocmd FileType ruby imap <c-l> <space>=><space>
+augroup END
 
 " *** Mappings
 
