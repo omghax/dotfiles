@@ -11,7 +11,7 @@ syntax on                             " Syntax highlighting
 
 set encoding=utf-8 fileencoding=utf-8
 
-set ruler                             " Show the line number on the bar
+set noruler                           " Don't show line / column number in status line (for speed)
 set more                              " Use more prompt
 set autoread                          " Watch for file changes
 set number                            " Line numbers
@@ -20,7 +20,7 @@ set hidden                            " Hide buffers instead of closing them
 set noautowrite                       " Don't automagically write on :next
 set lazyredraw                        " Don't redraw when we don't have to
 set showmode
-set showcmd
+set noshowcmd                         " Don't show command keys in status line (for speed)
 
 " *** Indents and Tabs
 
@@ -37,6 +37,7 @@ set virtualedit=all                   " Allow the cursor to go to 'invalid' plac
 
 set scrolloff=5                       " Keep at least 5 lines above / below
 set sidescrolloff=5                   " Keep at least 5 lines left / right
+set scrolljump=5                      " Scroll 5 lines at a time at bottom/top
 set history=200
 set backspace=indent,eol,start        " Allow backspacing over everything
 set linebreak
@@ -126,7 +127,6 @@ set background=dark
 color seti
 
 set fillchars=vert:│ " Solid line for vsplit separator
-set cursorline       " Highlight current line
 
 " *** Spellcheck
 
