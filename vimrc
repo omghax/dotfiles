@@ -238,24 +238,16 @@ map <c-n> :NERDTreeTabsToggle<cr>
 map <leader>p :CtrlP<cr>
 map <leader>b :CtrlPBuffer<cr>
 map <leader>r :CtrlPBufTag<cr>
-let g:ctrlp_working_path_mode=2 " Smart path mode
-let g:ctrlp_mru_files=1 " Enable most-recently-used files feature
-let g:ctrlp_jump_to_buffer=2 " Jump to tab and buffer if already open
+
+" Ignore everything in wildignore plus some other things
 let g:ctrlp_custom_ignore=&wildignore . '*/.git/*,*/.hg/*,*/.svn/*,*/bower_components/*,*/node_modules/*'
-let g:ctrlp_lazy_update=100 " Wait 100ms before starting a new search
-let g:ctrlp_max_files=0 " No file limit
 
-" Use The Silver Searcher
-if executable('ag')
-  " Use ag over grep
-  set grepprg=ag\ --nogroup\ --nocolor
-
-  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command='ag %s -l --nocolor --hidden -g ""'
-
-  " ag is fast enough that CtrlP doesn't need to cache
-  let g:ctrlp_use_caching=0
-endif
+let g:ctrlp_clear_cache_on_exit=0 " Don't clear filename cache, to improve startup time
+let g:ctrlp_jump_to_buffer=2      " Jump to tab and buffer if already open
+let g:ctrlp_lazy_update=100       " Wait 100ms after input before starting a search
+let g:ctrlp_max_files=0           " Disable the file limit
+let g:ctrlp_mru_files=1           " Enable most-recently-used files feature
+let g:ctrlp_working_path_mode=2   " Smart path mode
 
 " Syntastic
 map <leader>e :Errors<cr>
