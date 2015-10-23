@@ -242,6 +242,8 @@ let g:ctrlp_working_path_mode=2 " Smart path mode
 let g:ctrlp_mru_files=1 " Enable most-recently-used files feature
 let g:ctrlp_jump_to_buffer=2 " Jump to tab and buffer if already open
 let g:ctrlp_custom_ignore=&wildignore . '*/.git/*,*/.hg/*,*/.svn/*,*/bower_components/*,*/node_modules/*'
+let g:ctrlp_lazy_update=100 " Wait 100ms before starting a new search
+let g:ctrlp_max_files=0 " No file limit
 
 " Use The Silver Searcher
 if executable('ag')
