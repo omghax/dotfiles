@@ -248,6 +248,13 @@ let g:ctrlp_max_files=0           " Disable the file limit
 let g:ctrlp_mru_files=1           " Enable most-recently-used files feature
 let g:ctrlp_working_path_mode=2   " Smart path mode
 
+" The Silver Searcher (ag)
+
+if executable('ag')
+  " For Vim's :grep command, use ag instead
+  set grepprg=ag\ --nocolor\ --nogroup
+endif
+
 " Syntastic
 map <leader>e :Errors<cr>
 let g:syntastic_check_on_open=1
