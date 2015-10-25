@@ -211,7 +211,6 @@ nnoremap <leader>w <C-w>v<C-w>l
 
 " Clear search highlighting
 nnoremap <leader><space> :nohlsearch<cr>
-nnoremap <cr> :nohlsearch<cr>
 
 " Execute dot in the selection
 vnoremap . :norm.<cr>
