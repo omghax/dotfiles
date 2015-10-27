@@ -267,6 +267,18 @@ let g:syntastic_javascript_checkers = ['eslint']
 " Clear whitespace on save
 autocmd BufWritePre * :%s/\s\+$//e
 
+" Rename current file
+function! RenameFile()
+  let old_name = expand('%')
+  let new_name = input('New file name: ', expand('%'), 'file')
+  if new_name != '' && new_name != old_name
+    exec ':saveas ' . new_name
+    exec ':silent !rm ' . old_name
+    redraw!
+  endif
+endfunction
+map <leader>r :call RenameFile()<CR>
+
 " Include user's local vim config
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
