@@ -279,6 +279,9 @@ map <leader>r :call RenameFile()<CR>
 " Pull word under cursor into find / replace
 nmap <leader>z :%s#\<<C-r>=expand("<cword>")<cr>\>#
 
+" Shortcut for referencing directory of current file
+cnoremap %% <C-r>=expand('%:h').'/'<cr>
+
 " Include user's local vim config
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
