@@ -8,6 +8,7 @@
 .sass-cache
 db/*.sqlite3
 log
+spec/examples.txt
 tags
 tmp
 tmp/**/*
