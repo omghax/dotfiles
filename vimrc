@@ -64,15 +64,21 @@ set gdefault                          " Substitute globally on lines
 nnoremap / /\v
 vnoremap / /\v
 
+" *** Vim Bookkeeping
+
 " Disable swp files
 set noswapfile
 set nobackup
 set nowritebackup
-set backup
 
-" Directories for swp files
-set backupdir=$HOME/.vim/backup/
-set directory=$HOME/.vim/backup/
+set backupdir=$HOME/.vim/backup/      " In case backup is ever turned back on
+set directory=$HOME/.vim/backup/      " In case swapfile is ever turned back on
+
+" Keep a persistent undo file
+if exists('&undofile')
+  set undofile
+  set undodir=$HOME/.vim/undo/
+endif
 
 set title                             " Change the terminal's title
 set visualbell                        " Don't beep
