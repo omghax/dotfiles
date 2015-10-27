@@ -207,7 +207,7 @@ map <c-k> <c-w>k
 map <c-l> <c-w>l
 
 " Open new vertical split and switch over to it
-nnoremap <leader>w <C-w>v<C-w>l
+nnoremap <leader>w <c-w>v<c-w>l
 
 " Clear search highlighting
 nnoremap <leader><space> :nohlsearch<cr>
@@ -277,10 +277,10 @@ endfunction
 map <leader>r :call RenameFile()<CR>
 
 " Pull word under cursor into find / replace
-nmap <leader>z :%s#\<<C-r>=expand("<cword>")<cr>\>#
+nmap <leader>z :%s#\<<c-r>=expand("<cword>")<cr>\>#
 
 " Shortcut for referencing directory of current file
-cnoremap %% <C-r>=expand('%:h').'/'<cr>
+cnoremap %% <c-r>=expand('%:h').'/'<cr>
 
 " Include user's local vim config
 if filereadable(expand("~/.vimrc.local"))
