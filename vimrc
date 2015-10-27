@@ -219,9 +219,6 @@ vnoremap . :norm.<cr>
 vnoremap < <gv
 vnoremap > >gv
 
-" Pull word under cursor into find / replace
-nmap <leader>z :%s#\<<C-r>=expand("<cword>")<cr>\>#
-
 " *** Plugins
 
 " vim-ruby
@@ -278,6 +275,9 @@ function! RenameFile()
   endif
 endfunction
 map <leader>r :call RenameFile()<CR>
+
+" Pull word under cursor into find / replace
+nmap <leader>z :%s#\<<C-r>=expand("<cword>")<cr>\>#
 
 " Include user's local vim config
 if filereadable(expand("~/.vimrc.local"))
