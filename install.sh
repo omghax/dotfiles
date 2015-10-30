@@ -190,6 +190,7 @@ gem_install_or_update "bundler"
 step "Configuring Bundler"
 number_of_cores=$(sysctl -n hw.ncpu)
 bundle config --global jobs $((number_of_cores - 1))
+bundle config --global build.eventmachine --with-cppflags=-I`brew --prefix`/opt/openssl/include
 
 # *** NodeJS
 
