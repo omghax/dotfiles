@@ -291,6 +291,9 @@ nmap <leader>z :%s#\<<c-r>=expand("<cword>")<cr>\>#
 " Shortcut for referencing directory of current file
 cnoremap %% <c-r>=expand('%:h').'/'<cr>
 
+" Visually select the text that was last edited / pasted
+nnoremap gV `[V`]
+
 " Include user's local vim config
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
