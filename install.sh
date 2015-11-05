@@ -116,12 +116,17 @@ brew_install_or_upgrade "the_silver_searcher"
 
 maybe_link "$dotfiles/agignore" "$HOME/.agignore"
 
+# *** Ack
+
+brew_install_or_upgrade "ack"
+
+maybe_link "$dotfiles/ackrc" "$HOME/.ackrc"
+
 # *** Vim
 
 brew_install_or_upgrade "ctags-exuberant"
 brew_install_or_upgrade "vim"
 
-maybe_link "$dotfiles/ackrc" "$HOME/.ackrc"
 maybe_link "$dotfiles/vim" "$HOME/.vim"
 maybe_link "$dotfiles/vimrc" "$HOME/.vimrc"
 maybe_link "$dotfiles/vimrc.bundles" "$HOME/.vimrc.bundles"
