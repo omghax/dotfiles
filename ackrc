@@ -1,17 +1,49 @@
---no-css
+## Options ##
 
-# Group the results by file
+# Lexically sort filenames
+--sort-files
+
+# Pipe the output through a pager by default
+--pager=less
+
+# Highlight the matching text
+--color
+
+# Print a filename heading above each file's results and print a break between
+# results from different lines
 --group
 
-# Only show one line of output context around the results
---context=1
+# Search case-insensitive unless capitals are specified
+--smart-case
 
 # Follow symlinks
 --follow
 
---color
+## Types ##
 
---ignore-dir=gems
+# These are all Ruby
+--type-add=ruby=.gemspec,.rake,.ru,Gemfile,Rakefile
+
+# Introduce more types to Ack
+--type-set=csv=.csv,.tsv,.txt
+--type-set=handlebars=.handlebars,.hbs
+--type-set=plaintext=.markdown,.md,.mdown,.mkdn,.textile
+--type-set=sass=.sass
+--type-set=scss=.scss
+
+# Ignore directories for Bower / Node projects
+--ignore-dir=bower_components
+--ignore-dir=dist
+--ignore-dir=node_modules
+
+# Ignore directories for Sass projects
+--ignore-dir=.sass-cache
+
+# Ignore directories for Rails projects
+--ignore-dir=doc
 --ignore-dir=log
 --ignore-dir=tmp
 --ignore-dir=vendor
+
+# Ignore ctags database
+--ignore-file=is:tags
