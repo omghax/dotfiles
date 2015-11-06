@@ -234,7 +234,6 @@ let g:rubycomplete_rails=1
 
 " NERDTree
 map <leader>n :NERDTreeFind<cr>
-map <c-n> :NERDTreeTabsToggle<cr>
 
 " CtrlP
 map <leader>p :CtrlP<cr>
