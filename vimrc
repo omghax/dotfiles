@@ -276,6 +276,9 @@ let g:syntastic_javascript_checkers = ['eslint']
 " Matchit (included with Vim 7.3+)
 runtime! macros/matchit.vim
 
+" Run Ack on word under cursor
+nnoremap <leader>A :Ack "\b<cword>\b"<cr>
+
 " *** Custom Functions
 
 " Clear whitespace on save
