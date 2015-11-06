@@ -233,7 +233,7 @@ let g:rubycomplete_classes_in_global=1
 let g:rubycomplete_rails=1
 
 " NERDTree
-map <leader>n :NERDTreeFind<cr>
+map <leader>n :NERDTreeToggle<cr>
 
 " CtrlP
 map <leader>p :CtrlP<cr>
