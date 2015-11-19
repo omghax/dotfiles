@@ -226,3 +226,6 @@ npm_install_or_update() {
 step "Installing global npm packages"
 npm_install_or_update "bower"
 npm_install_or_update "ember-cli"
+
+step "Cleaning up Homebrew"
+brew cleanup
