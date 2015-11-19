@@ -197,35 +197,26 @@ number_of_cores=$(sysctl -n hw.ncpu)
 bundle config --global jobs $((number_of_cores - 1))
 bundle config --global build.eventmachine --with-cppflags=-I`brew --prefix`/opt/openssl/include
 
-# *** NodeJS
+# *** Node Version Manager (nvm)
 
-brew_install_or_upgrade "node"
+nvm_dir="$HOME/.nvm"
 
-npm_is_installed() {
-  npm list --depth 1 -g "$1" >/dev/null 2>&1
-}
+step "Installing nvm"
+if [ ! -d "$nvm_dir" ]; then
+  git clone -q "https://github.com/creationix/nvm.git" "$nvm_dir"
+fi
+git -C "$nvm_dir" checkout -q `git -C "$nvm_dir" describe --abbrev=0 --tags`
 
-npm_is_updatable() {
-  ! npm outdated -g "$1" >/dev/null 2>&1
-}
+source "$nvm_dir/nvm.sh"
 
-npm_install_or_update() {
-  if npm_is_installed "$1"; then
-    step "Updating '$1'"
-    if npm_is_updatable "$1"; then
-      npm update -g "$@"
-    else
-      echo "Already using the latest version of '$1'"
-    fi
-  else
-    step "Installing '$1'"
-    npm install -g "$@"
-  fi
-}
+node_version="v5.1.0"
 
-step "Installing global npm packages"
-npm_install_or_update "bower"
-npm_install_or_update "ember-cli"
+if nvm ls "$node_version" >/dev/null; then
+  echo "node $node_version is already installed"
+else
+  step "Installing node $node_version"
+  nvm install "$node_version"
+fi
 
 step "Cleaning up Homebrew"
 brew cleanup
