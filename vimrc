@@ -227,6 +227,12 @@ vnoremap > >gv
 
 " *** Plugins
 
+" Ack.vim
+if executable('ag')
+  " If ag is installed, use that instead of ack
+  let g:ackprg='ag --nogroup --nocolor --column'
+endif
+
 " vim-ruby
 let g:rubycomplete_buffer_loading=1
 let g:rubycomplete_classes_in_global=1
@@ -246,11 +252,7 @@ let g:ctrlp_custom_ignore=&wildignore . '*/.git/*,*/.hg/*,*/.svn/*,*/bower_compo
 let g:ctrlp_lazy_update=100 " Wait 100ms before starting a new search
 let g:ctrlp_max_files=0 " No file limit
 
-" Use The Silver Searcher
 if executable('ag')
-  " Use ag over grep
-  set grepprg=ag\ --nogroup\ --nocolor
-
   " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
   let g:ctrlp_user_command='ag %s -l --nocolor --hidden -g ""'
 
