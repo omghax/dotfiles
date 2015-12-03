@@ -242,9 +242,6 @@ let g:rubycomplete_rails=1
 map <leader>n :NERDTreeToggle<cr>
 
 " CtrlP
-map <leader>p :CtrlP<cr>
-map <leader>b :CtrlPBuffer<cr>
-map <leader>r :CtrlPBufTag<cr>
 let g:ctrlp_working_path_mode=2 " Smart path mode
 let g:ctrlp_mru_files=1 " Enable most-recently-used files feature
 let g:ctrlp_jump_to_buffer=2 " Jump to tab and buffer if already open
