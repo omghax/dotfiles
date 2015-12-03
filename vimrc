@@ -238,9 +238,6 @@ let g:rubycomplete_buffer_loading=1
 let g:rubycomplete_classes_in_global=1
 let g:rubycomplete_rails=1
 
-" NERDTree
-map <leader>n :NERDTreeToggle<cr>
-
 " CtrlP
 let g:ctrlp_working_path_mode=2 " Smart path mode
 let g:ctrlp_mru_files=1 " Enable most-recently-used files feature
