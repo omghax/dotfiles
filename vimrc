@@ -295,7 +295,6 @@ function! RenameFile()
     redraw!
   endif
 endfunction
-map <leader>r :call RenameFile()<CR>
 
 " Pull word under cursor into find / replace
 nmap <leader>z :%s#\<<c-r>=expand("<cword>")<cr>\>#
