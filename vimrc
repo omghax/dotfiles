@@ -225,6 +225,9 @@ vnoremap . :norm.<cr>
 vnoremap < <gv
 vnoremap > >gv
 
+" Make explorer mode behave like NERDTree
+let g:netrw_liststyle=3
+
 " *** Plugins
 
 " Ack.vim
