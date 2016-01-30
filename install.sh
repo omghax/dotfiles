@@ -14,8 +14,10 @@ homebrew="$HOME/Homebrew"
 
 step "Installing Homebrew"
 if command -v brew >/dev/null; then
-  echo "Homebrew is already installed"
+  homebrew=$(brew --prefix)
+  echo "Homebrew is already installed (in $homebrew)"
 else
+  homebrew="$HOME/Homebrew"
   mkdir -p "$homebrew" && curl -L https://github.com/Homebrew/homebrew/tarball/master | tar xz --strip 1 -C "$homebrew"
 fi
 
