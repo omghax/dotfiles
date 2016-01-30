@@ -649,3 +649,8 @@ else
   colorscheme wombat256
 endif
 " }}}
+
+" vim-rspec {{{
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>T :call RunNearestSpec()<CR>
+" }}}
