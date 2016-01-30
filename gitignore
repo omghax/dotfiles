@@ -8,6 +8,8 @@
 .*.swp
 .DS_Store
 .bundle
+.env
+.env.*
 .ruby-gemset
 .svn
 .yardoc
