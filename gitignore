@@ -15,6 +15,7 @@
 .yardoc
 a.out
 bin
+config/secrets.yml
 node_modules
 tags
 vendor/cache/libv8*.gem
