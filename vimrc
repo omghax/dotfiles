@@ -130,7 +130,7 @@ set guicursor+=sm:block-Cursor-blinkwait175-blinkoff150-blinkon175
 set background=dark
 
 " Default color scheme
-color seti
+color github
 
 set fillchars=vert:│ " Solid line for vsplit separator
 
