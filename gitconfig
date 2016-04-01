@@ -16,6 +16,7 @@
 	rbs = rebase --skip
 	rh = reset --hard
 	st = status
+	yolo = push --force --force-with-lease
 [color]
 	branch = auto
 	diff = auto
