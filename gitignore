@@ -6,6 +6,7 @@
 .bundle
 .env
 .sass-cache
+bower_components/
 db/*.sqlite3
 log
 node_modules/
