@@ -8,6 +8,7 @@
 .sass-cache
 db/*.sqlite3
 log
+node_modules/
 spec/examples.txt
 tags
 tmp
