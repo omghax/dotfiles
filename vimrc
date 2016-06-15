@@ -92,6 +92,11 @@ if exists("+colorcolumn")
   set colorcolumn=81
 endif
 
+" Status line
+set statusline=
+set statusline+=%-4.3n\               " Buffer number
+set statusline+=%f\                   " Filename
+
 " Always show status line
 set laststatus=2
 
