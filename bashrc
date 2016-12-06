@@ -1,6 +1,6 @@
 source ~/.bash/config.sh
 source ~/.bash/aliases.sh
-source ~/.bash/paths.sh
+source ~/.bash/homebrew.sh
 source ~/.bash/completion.sh
 source ~/.bash/rbenv.sh
 source ~/.bash/nvm.sh
