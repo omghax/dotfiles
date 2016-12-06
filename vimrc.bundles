@@ -11,9 +11,9 @@ endif
 
 Bundle 'gmarik/vundle'
 
+Bundle 'ctrlpvim/ctrlp.vim'
 Bundle 'endel/vim-github-colorscheme'
 Bundle 'godlygeek/tabular'
-Bundle 'kien/ctrlp.vim'
 Bundle 'michaeljsmith/vim-indent-object'
 Bundle 'mileszs/ack.vim'
 Bundle 'scrooloose/nerdcommenter'
