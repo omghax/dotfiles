@@ -102,6 +102,9 @@ fi
 maybe_link "$dotfiles/gitconfig" "$HOME/.gitconfig"
 maybe_link "$dotfiles/gitignore" "$HOME/.gitignore"
 
+brew_install_or_upgrade "gpg2"
+brew_install_or_upgrade "git-secret"
+
 # *** Bash
 
 brew_install_or_upgrade "bash-completion"

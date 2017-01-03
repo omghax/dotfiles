@@ -9,3 +9,6 @@ export CLICOLOR="Yes"
 
 # Prompt
 export PS1="\u@\h:\w\$ "
+
+# git-secret
+export SECRETS_GPG_COMMAND="gpg2"
