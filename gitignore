@@ -4,6 +4,7 @@
 *~
 .DS_Store
 .bundle
+.byebug_history
 .env
 .sass-cache
 bower_components/
