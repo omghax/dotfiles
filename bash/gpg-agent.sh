@@ -1,7 +1,1 @@
-[ -f ~/.gpg-agent-info ] && source ~/.gpg-agent-info
-
-if [ -S "${GPG_AGENT_INFO%%:*}" ]; then
-  export GPG_AGENT_INFO
-else
-  eval $(gpg-agent --daemon --use-standard-socket --write-env-file ~/.gpg-agent-info)
-fi
+gpg-agent --daemon > /dev/null 2>&1
