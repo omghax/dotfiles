@@ -25,9 +25,9 @@ Bundle 'tpope/vim-surround'
 Bundle 'trusktr/seti.vim'
 
 " Languages
+Bundle 'joukevandermaas/vim-ember-hbs'
 Bundle 'leshill/vim-json'
 Bundle 'mattn/emmet-vim'
-Bundle 'mustache/vim-mustache-handlebars'
 Bundle 'pangloss/vim-javascript'
 Bundle 'skalnik/vim-vroom'
 Bundle 'thoughtbot/vim-rspec'
