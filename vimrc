@@ -54,7 +54,7 @@ set ff=unix
 
 set incsearch                         " Incremental search
 set ignorecase                        " Search ignoring case
-set showmatch                         " Show matching bracket
+set noshowmatch                       " Don't show matching bracket
 set smartcase                         " Search ignore case unless one character is uppercase
 set hlsearch                          " Highlight the search
 set diffopt=filler,iwhite             " Ignore all whitespace and sync
