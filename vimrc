@@ -132,10 +132,16 @@ set guicursor+=i-ci:ver25-Cursor
 set guicursor+=r-cr:hor20-Cursor
 set guicursor+=sm:block-Cursor-blinkwait175-blinkoff150-blinkon175
 
-set background=dark
-
-" Default color scheme
-color github
+if (&t_Co == 256 || &t_Co == 88) && filereadable(expand("~/.vimrc_background"))
+  " Base16 updates a ~/.vimrc_background file that will have the current color
+  " scheme, so we just need to source this file and let base16 know to enable
+  " 256-color mode
+  let base16colorspace=256
+  source ~/.vimrc_background
+else
+  " Otherwise, fall back to the default Vim theme
+  colorscheme default
+endif
 
 set fillchars=vert:│ " Solid line for vsplit separator
 

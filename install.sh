@@ -105,6 +105,14 @@ maybe_link "$dotfiles/gitignore" "$HOME/.gitignore"
 brew_install_or_upgrade "gpg2"
 brew_install_or_upgrade "git-secret"
 
+# *** Base16
+
+if [ ! -d "$dotfiles/base16-shell/.git" ]; then
+  git --git-dir="$dotfiles/.git" submodule update base16-shell
+fi
+
+maybe_link "$dotfiles/base16-shell" "$HOME/.base16-shell"
+
 # *** Bash
 
 brew_install_or_upgrade "bash-completion"
