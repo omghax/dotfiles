@@ -6,7 +6,7 @@
 	co = checkout
 	d = diff
 	dc = diff --cached
-	ff = merge
+	ff = merge --ff-only
 	fixup = commit --amend --no-edit
 	p = push
 	rb = rebase
