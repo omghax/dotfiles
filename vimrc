@@ -180,6 +180,12 @@ augroup filetype_gitcommit
   autocmd FileType gitcommit setlocal spell
 augroup END
 
+augroup filetype_handlebars
+  autocmd!
+
+  autocmd BufRead,BufNewFile *.hbs,*.handlebars set ft=handlebars.html
+augroup END
+
 augroup filetype_javascript
   " Ctrl-l to insert a fat arrow
   autocmd FileType javascript imap <c-l> <space>=><space>
