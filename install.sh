@@ -222,7 +222,7 @@ git -C "$nvm_dir" checkout -q `git -C "$nvm_dir" describe --abbrev=0 --tags`
 
 source "$nvm_dir/nvm.sh"
 
-node_version="v5.1.0"
+node_version="stable"
 
 if nvm ls "$node_version" >/dev/null; then
   echo "node $node_version is already installed"
