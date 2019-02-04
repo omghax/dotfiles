@@ -174,7 +174,7 @@ brew_install_or_upgrade "ruby-build"
 
 eval "$(rbenv init -)"
 
-ruby_version="2.2.3"
+ruby_version="2.6.1"
 
 if rbenv versions | grep -Fq "$ruby_version"; then
   echo "Ruby $ruby_version is already installed"
