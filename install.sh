@@ -158,6 +158,7 @@ vim -u "$dotfiles/vimrc.bundles" +BundleInstall! +BundleClean +qall
 
 # *** Tmux
 
+brew_install_or_upgrade "reattach-to-user-namespace"
 brew_install_or_upgrade "tmux"
 
 maybe_link "$dotfiles/tmux.conf" "$HOME/.tmux.conf"
