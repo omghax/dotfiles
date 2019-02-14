@@ -89,8 +89,5 @@ defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool
 step "Show the ~/Library folder"
 chflags nohidden ~/Library
 
-step "Disable local Time Machine backups (requires sudo)"
-sudo tmutil disablelocal
-
 step "Kill affected applications"
 for app in Safari Finder Dock Mail; do killall "$app" 2>/dev/null; done
