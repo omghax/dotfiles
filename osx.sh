@@ -13,6 +13,9 @@ defaults write NSGlobalDomain AppleFontSmoothing -int 2
 step "Enable the 2D dock"
 defaults write com.apple.dock no-glass -bool true
 
+step "Automatically hide the dock"
+defaults write com.apple.dock autohide -bool true
+
 step "Disable menu bar transparency"
 defaults write -g AppleEnableMenuBarTransparency -bool false
 
