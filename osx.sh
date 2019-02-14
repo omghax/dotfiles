@@ -89,6 +89,9 @@ defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 step "Enable tap to click (Trackpad)"
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
 
+step "Reduce transparency"
+defaults write com.apple.universalaccess reduceTransparency -bool true
+
 step "Show the ~/Library folder"
 chflags nohidden ~/Library
 
