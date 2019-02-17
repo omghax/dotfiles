@@ -18,7 +18,7 @@ defaults write com.apple.dock autohide -bool true
 
 step "Tweak Mission Control to reduce CPU usage"
 defaults write com.apple.dock mru-spaces -bool false
-defaults write com.apple.spaces spans-displays -bool true
+defaults write com.apple.spaces spans-displays -bool false
 
 step "Disable menu bar transparency"
 defaults write -g AppleEnableMenuBarTransparency -bool false
