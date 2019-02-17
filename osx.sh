@@ -35,8 +35,8 @@ defaults write com.apple.screencapture disable-shadow -bool true
 step "Disable press-and-hold for keys in favor of key repeat"
 defaults write -g ApplePressAndHoldEnabled -bool false
 
-step "Set initial key repeat delay to 150ms (normal minimum is 225ms)"
-defaults write NSGlobalDomain InitialKeyRepeat -int 10
+step "Set initial key repeat delay to 180ms (normal minimum is 225ms)"
+defaults write NSGlobalDomain InitialKeyRepeat -int 12
 
 step "Set key repeat reate to 15ms (normal minimum is 30ms)"
 defaults write NSGlobalDomain KeyRepeat -int 1
